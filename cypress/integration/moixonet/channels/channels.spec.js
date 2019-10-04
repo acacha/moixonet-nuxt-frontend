@@ -18,4 +18,17 @@ context('Channels', () => {
     cy.contains('Canal 2')
     cy.contains('Canal 3')
   })
+
+  it('can add a new channel', () => {
+    // 1 PREPARE
+
+    // 2 EXECUTE
+    cy.visit('/channels')
+    cy.get('input').type('Canal 4')
+    cy.get('button').click()
+
+    // 3 ASSERTS
+    cy.contains('Canal 4')
+
+  })
 })
