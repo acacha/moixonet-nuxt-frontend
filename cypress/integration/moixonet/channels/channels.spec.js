@@ -24,11 +24,26 @@ context('Channels', () => {
 
     // 2 EXECUTE
     cy.visit('/channels')
-    cy.get('input').type('Canal 4')
-    cy.get('button').click()
+    cy.get('input[data-test=new_channel]').type('Canal 4')
+    cy.get('button[data-test=add_button]').click()
 
     // 3 ASSERTS
     cy.contains('Canal 4')
+  })
 
+  it('can delete channel', () => {
+    cy.visit('/channels')
+    cy.get('button[data-test=delete_button_1]').click()
+
+    // 3 ASSERTS
+    cy.contains('Canal 1').should('not.exist')
+  })
+
+  it('can update channel', () => {
+    cy.visit('/channels')
+    cy.get('button[data-test=update_button_1]').click()
+    cy.get('input[data-test=new_value_1]').type('Nou nom del canal 1').blur()
+    cy.contains('Canal 1').should('not.exist')
+    cy.contains('Nou nom del canal 1')
   })
 })

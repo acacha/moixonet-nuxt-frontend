@@ -1,6 +1,6 @@
 <template>
   <div>
-    <app-channels :channels="channels"></app-channels>
+    <app-channels :channels="channels" />
   </div>
 </template>
 
