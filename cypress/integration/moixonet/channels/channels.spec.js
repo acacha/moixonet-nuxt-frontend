@@ -42,7 +42,7 @@ context('Channels', () => {
   it('can update channel', () => {
     cy.visit('/channels')
     cy.get('button[data-test=update_button_1]').click()
-    cy.get('input[data-test=new_value_1]').type('Nou nom del canal 1').blur()
+    cy.get('input[data-test=new_value_1]').clear().type('Nou nom del canal 1').blur()
     cy.contains('Canal 1').should('not.exist')
     cy.contains('Nou nom del canal 1')
   })

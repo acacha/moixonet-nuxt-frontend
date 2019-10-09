@@ -5,4 +5,10 @@ context('Home', () => {
     cy.contains('Channels')
       .should('have.attr', 'href', '/channels')
   })
+
+  it('Home page show link to messages', () => {
+    cy.visit('/')
+    cy.contains('Messages')
+      .should('have.attr', 'href', '/messages')
+  })
 })
