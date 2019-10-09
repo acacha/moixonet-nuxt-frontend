@@ -9,8 +9,8 @@
     </form>
     <ul>
       <li v-for="message in messages" :key="message.id">
-        <input v-if="editing === message.id" type="text" v-model="newTitle" @blur="update(message)" :data-test="'new_title_' + 1">
-        <input v-if="editing === message.id" type="text" v-model="newDescription" @blur="update(message)" :data-test="'new_description_' + 1">
+        <input v-if="editing === message.id" type="text" v-model="newTitle" @blur="update(message)" :data-test="'new_title_' + message.id">
+        <input v-if="editing === message.id" type="text" v-model="newDescription" @blur="update(message)" :data-test="'new_description_' + message.id">
         <span v-else>{{ message.title }} | {{ message.description }}  </span>
         <button @click="remove(message)" :data-test="'delete_button_' + message.id">Eliminar</button>
         <button @click="initUpdate(message)" :data-test="'update_button_' + message.id">Update</button>
