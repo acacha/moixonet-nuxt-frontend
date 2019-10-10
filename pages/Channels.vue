@@ -1,12 +1,15 @@
 <template>
   <div>
+    <button @click="refresh">
+      Refresh
+    </button>
     <app-channels :channels="channels" />
   </div>
 </template>
 
 <script>
-// import axios from 'axios'
-import channelsFixture from '../cypress/integration/fixtures/channels'
+import axios from 'axios'
+// import channelsFixture from '../cypress/integration/fixtures/channels'
 import AppChannels from '../components/AppChannels'
 
 export default {
@@ -17,17 +20,23 @@ export default {
   data () {
     return {
       // FIXTURES
-      channels: channelsFixture
+      // channels: channelsFixture,
+      channels: []
     }
   },
   created () {
     // PROMISES
-    // axios.get('http://moixonet-backend.test/api/v1/channels').then((response) => {
-    //   this.channels = response.data
-    // })
-    //   .catch((error) => {
-    //     // console.log(error)
-    //   })
+    this.refresh()
+  },
+  methods: {
+    refresh () {
+      axios.get('http://moixonet-backend.test/api/v1/channels').then((response) => {
+        this.channels = response.data
+      })
+        .catch((error) => {
+          console.log(error)
+        })
+    }
   }
 }
 </script>

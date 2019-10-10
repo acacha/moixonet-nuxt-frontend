@@ -1,19 +1,23 @@
 <template>
   <div>
     <form>
-      Title: <input data-test="new_message_title" v-model="title" type="text" placeholder="Títol">
-      Description: <input data-test="new_message_description" v-model="description" type="text" placeholder="Descripció">
+      Title: <input v-model="title" data-test="new_message_title" type="text" placeholder="Títol">
+      Description: <input v-model="description" data-test="new_message_description" type="text" placeholder="Descripció">
       <button data-test="add_button" @click.prevent="add">
         Afegir
       </button>
     </form>
     <ul>
       <li v-for="message in messages" :key="message.id">
-        <input v-if="editing === message.id" type="text" v-model="newTitle" @blur="update(message)" :data-test="'new_title_' + message.id">
-        <input v-if="editing === message.id" type="text" v-model="newDescription" @blur="update(message)" :data-test="'new_description_' + message.id">
+        <input v-if="editing === message.id" v-model="newTitle" type="text" :data-test="'new_title_' + message.id" @blur="update(message)">
+        <input v-if="editing === message.id" v-model="newDescription" type="text" :data-test="'new_description_' + message.id" @blur="update(message)">
         <span v-else>{{ message.title }} | {{ message.description }}  </span>
-        <button @click="remove(message)" :data-test="'delete_button_' + message.id">Eliminar</button>
-        <button @click="initUpdate(message)" :data-test="'update_button_' + message.id">Update</button>
+        <button :data-test="'delete_button_' + message.id" @click="remove(message)">
+          Eliminar
+        </button>
+        <button :data-test="'update_button_' + message.id" @click="initUpdate(message)">
+          Update
+        </button>
       </li>
     </ul>
   </div>
