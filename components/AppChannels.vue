@@ -7,7 +7,8 @@
       </button>
     </form>
     <ul>
-      <li v-for="channel in channels" :key="channel.id">
+      <li v-for="channel in filteredChannels" :key="channel.id">
+        <input type="checkbox" :checked="channel.active" @click="toggle(channel)">
         <input
           v-if="editing === channel.id"
           v-model="newValue"
@@ -25,12 +26,36 @@
         </button>
       </li>
     </ul>
+    Total: {{ total }}
+    <ul>
+      <li><a href="#" @click="filter='all'">All</a></li>
+      <li><a href="#" @click="filter='active'">Active</a></li>
+      <li><a href="#" @click="filter='disabled'">Disable</a></li>
+    </ul>
   </div>
 </template>
 
 <script>
 import axios from 'axios'
 /* eslint-disable */
+
+// visibility filters
+var filters = {
+  all: function (channels) {
+    return channels
+  },
+  active: function (channels) {
+    return channels.filter(function (channel) {
+      return channel.active
+    })
+  },
+  disabled: function (channels) {
+    return channels.filter(function (channel) {
+      return !channel.active
+    })
+  }
+}
+
 export default {
   name: 'AppChannels',
   props: {
@@ -39,14 +64,29 @@ export default {
       required: true
     }
   },
+  computed: {
+    total() {
+      return this.channels.length
+    },
+    filteredChannels() {
+      return filters[this.filter](this.channels)
+    }
+  },
   data () {
     return {
       newChannel: '',
       editing: null,
-      newValue: ''
+      newValue: '',
+      filter: 'all'
     }
   },
   methods: {
+    toggle (channel) {
+      // TODO
+      // 1 FRONTEND
+      this.channels[this.channels.indexOf(channel)].active = !channel.active
+      // 2 BACKEND
+    },
     add () {
       // console.log('TODO ADD')
       // 1) Que cal fer al frontend
