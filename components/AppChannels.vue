@@ -82,10 +82,25 @@ export default {
   },
   methods: {
     toggle (channel) {
-      // TODO
-      // 1 FRONTEND
       this.channels[this.channels.indexOf(channel)].active = !channel.active
-      // 2 BACKEND
+      if (!channel.active) this.disable(channel)
+      else this.active(channel)
+    },
+    disable (channel) {
+      axios.delete('http://moixonet-backend.test/api/v1/active_channels/' + channel.id).then(() => {
+        console.log('OK!')
+      }).catch(() => {
+        // ALERT
+        console.log('ERROR!')
+      })
+    },
+    active (channel) {
+      axios.post('http://moixonet-backend.test/api/v1/active_channels/' + channel.id).then(() => {
+        console.log('OK!')
+      }).catch(() => {
+        // ALERT
+        console.log('ERROR!')
+      })
     },
     add () {
       // console.log('TODO ADD')
