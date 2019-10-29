@@ -1,7 +1,15 @@
 <template>
-  <div>
+  <v-app dark>
+    <nav>
+      <ul>
+        <li><a href="/channels">Channels</a></li>
+      </ul>
+      <ul>
+        <li><a href="/messages">Messages</a></li>
+      </ul>
+    </nav>
     <nuxt />
-  </div>
+  </v-app>
 </template>
 
 <style>
