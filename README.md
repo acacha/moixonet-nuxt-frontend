@@ -146,7 +146,7 @@ Al fitxer package.json:
   "engines": {
     "node": "10.x"
   }
-```
+``
 
 # Build Setup
 
