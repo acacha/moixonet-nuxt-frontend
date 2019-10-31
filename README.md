@@ -1,3 +1,67 @@
+# DEPLOYMENT TYPES
+
+- NUXT APP TYPES (RENDERING MODE):
+  - SPA: No server-side rendering (only client-side navigation)
+  - Universal: Isomorphic application (server-side rendering + client-side navigation)
+  - https://nuxtjs.org/api/configuration-mode/ 
+  - nuxt.config.js mode option
+
+## SPA
+
+- https://es.wikipedia.org/wiki/Single-page_application
+- vue-router
+
+## Statically generated / Pre-rendering: https://vueschool.io/lessons/how-to-deploy-nuxtjs-to-netlify?friend=nuxt
+  
+Statically generated:
+  
+```
+yarn generate or npm run generate
+```
+
+SPA MODE:
+
+```
+yarn build or npm run build
+```
+
+## SERVER SIDE RENDERING (SSR) | UNIVERSAL|ISOMORPHIC APP
+
+https://ssr.vuejs.org/
+https://medium.com/capital-one-tech/why-everyone-is-talking-about-isomorphic-universal-javascript-and-why-it-matters-38c07c87905
+
+Vue.js is a framework for building client-side applications. 
+By default, Vue components produce and manipulate DOM in the browser as output. 
+However, it is also possible to render the same components into HTML strings on the server, 
+send them directly to the browser, and finally **"hydrate"** the static markup into a fully 
+interactive app on the client.
+
+A server-rendered Vue.js app can also be considered **"isomorphic" or "universal"**, 
+in the sense that the majority of your app's code runs on both the server and the client.
+
+- Why SSR?
+  - Better SEO, as the search engine crawlers will directly see the fully rendered page.
+  - Faster time-to-content, especially on slow internet or slow devices
+- Problems:
+  - Development constraints. Browser-specific code can only be used inside certain lifecycle hooks; some external libraries may need special treatment to be able to run in a server-rendered app.
+  - More involved build setup and deployment requirements. Unlike a fully static SPA that can be deployed on any static file server, a server-rendered app requires an environment where a Node.js server can run.
+  - More server-side load. Rendering a full app in Node.js is obviously going to be more CPU-intensive than just serving static files, so if you expect high traffic, be prepared for corresponding server load and wisely employ caching strategies  
+
+### SSR vs Prerendering
+
+If you're only investigating SSR to improve the SEO of a handful of marketing pages (e.g. /, /about, /contact, etc), then you probably want prerendering instead. 
+Rather than using a web server to compile HTML on-the-fly, prerendering simply generates static HTML files for specific routes at build time. 
+The advantage is setting up prerendering is much simpler and allows you to keep your frontend as a fully static site.
+
+If you're using webpack, you can easily add prerendering with the prerender-spa-plugin. It's been extensively tested with Vue apps - and in fact, the creator is a member of the Vue core team.
+
+#About This Guide
+
+# NETLIFY DEPLOYMENT
+
+- Feu usuari a Netlify: https://www.netlify.com/
+- https://nuxtjs.org/faq/netlify-deployment/
+
 # moixonet-nuxt-frontend
 
 > My kickass Nuxt.js project
@@ -17,6 +81,88 @@ $ npm run start
 
 # generate static project
 $ npm run generate
+```
+
+For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+
+
+# NOW DEPLOYMENT
+
+Example now.json file
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "nuxt.config.js",
+      "use": "@nuxtjs/now-builder",
+      "config": {}
+    }
+  ]
+}
+
+# Authentication iesebre-nuxt
+
+https://github.com/pktharindu/nuxt-laravel-passport-example
+
+## Proves Auth-module amb laravel Passport amb Proxy (Janitor package)
+
+- Instal·lar mòdul auth segons: https://auth.nuxtjs.org/guide/setup.html
+
+## DOTENV
+
+TODO: copait del projecte: 
+
+- https://github.com/pktharindu/nuxt-laravel-passport-example
+
+# NOW
+
+S'ha instal·lat cli de now:   
+
+```
+npm i -g now
+now login
+```  
+
+Observeu el fitxer now.json del projecte. Per evitar un error també cal posar a package.json:
+
+```
+  ...
+  ,
+  "engines": {
+    "node": "10.x"
+  }
+``` 
+
+Pujar a explotació:
+
+``` 
+now --prod
+```
+
+Al fitxer package.json:
+
+```
+,
+  "engines": {
+    "node": "10.x"
+  }
+``
+
+# Build Setup
+
+``` bash
+# install dependencies
+$ yarn install
+
+# serve with hot reload at localhost:3000
+$ yarn dev
+
+# build for production and launch server
+$ yarn build
+$ yarn start
+
+# generate static project
+$ yarn generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
