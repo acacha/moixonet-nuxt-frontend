@@ -1,4 +1,5 @@
 import colors from 'vuetify/es5/util/colors'
+require('dotenv').config()
 
 export default {
   mode: 'universal',
@@ -81,6 +82,23 @@ export default {
           success: colors.green.accent3
         }
       }
+    }
+  },
+  auth: {
+    strategies: {
+      local: {
+        endpoints: {
+          login: { url: process.env.LARAVEL_PASSPORT_ENDPOINT + '/api/login', method: 'post', propertyName: 'access_token' },
+          logout: { url: process.env.LARAVEL_PASSPORT_ENDPOINT + '/api/logout', method: 'post' },
+          user: { url: process.env.LARAVEL_PASSPORT_ENDPOINT + '/api/user', method: 'get', propertyName: '' }
+        }
+      }
+    },
+    redirect: {
+      login: '/login',
+      logout: '/',
+      callback: '/login',
+      home: '/'
     }
   }
 }
