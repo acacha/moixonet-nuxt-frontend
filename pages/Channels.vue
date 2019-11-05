@@ -13,6 +13,7 @@ import axios from 'axios'
 import AppChannels from '../components/AppChannels'
 
 export default {
+  middleware: ['auth'],
   name: 'Channels',
   components: {
     'app-channels': AppChannels
