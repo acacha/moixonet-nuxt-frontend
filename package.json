@@ -5,7 +5,7 @@
   "author": "Sergi Tur Badenas",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
+    "dev": "nuxt --hostname nuxt.moixonet.acacha.scool.test --port 3333",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
@@ -20,7 +20,7 @@
     "@nuxtjs/axios": "^5.8.0",
     "@nuxtjs/vuetify": "^1.9.0",
     "axios": "^0.19.0",
-    "nuxt": "^2.0.0"
+    "nuxt": "^2.10.2"
   },
   "devDependencies": {
     "@nuxtjs/dotenv": "^1.4.1",
@@ -29,8 +29,8 @@
     "@vue/test-utils": "^1.0.0-beta.27",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^24.1.0",
-    "cypress": "^3.4.1",
-    "eslint": "^6.1.0",
+    "cypress": "^3.6.0",
+    "eslint": "^6.6.0",
     "eslint-plugin-nuxt": ">=0.4.2",
     "jest": "^24.1.0",
     "vue-jest": "^4.0.0-0"

@@ -6,7 +6,7 @@
 
 <script>
 // import axios from 'axios'
-import messagesFixture from '../cypress/integration/fixtures/messages'
+import messagesFixture from '../cypress/fixtures/messages'
 import AppMessages from '../components/AppMessages'
 
 export default {

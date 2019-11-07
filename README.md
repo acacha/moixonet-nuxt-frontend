@@ -1,3 +1,36 @@
+# Requeriments
+
+```
+npm update
+npm install --save-dev cross-env
+```
+
+# VUETIFY ICONS
+
+Cal posar mdi- prefix davant les icones i buscar la icona a:
+
+https://materialdesignicons.com/
+
+# NUXT PORT AND HOSTNAME
+
+https://nuxtjs.org/faq/host-port/
+
+"scripts": {
+  "dev": "nuxt --hostname myhost --port 3333"
+}
+
+Actualitzeu tammbé cypress.json la variable **baseURL**
+
+# EXPLOTACIó
+
+Domini explotació nuxt frontend:
+
+nuxt.moixonet.acacha.scool.cat
+
+# Domini local:
+
+nuxt.moixonet.acacha.scool.test 
+
 # DEPLOYMENT TYPES
 
 - NUXT APP TYPES (RENDERING MODE):

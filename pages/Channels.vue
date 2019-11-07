@@ -35,6 +35,7 @@ export default {
         this.channels = response.data
       })
         .catch((error) => {
+          // eslint-disable-next-line
           console.log(error)
         })
     }

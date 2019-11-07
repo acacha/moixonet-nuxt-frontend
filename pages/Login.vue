@@ -12,7 +12,7 @@
         <v-text-field
           label="Login"
           name="login"
-          prepend-icon="person"
+          prepend-icon="mdi-account"
           type="text"
         />
 
@@ -20,13 +20,13 @@
           id="password"
           label="Password"
           name="password"
-          prepend-icon="lock"
+          prepend-icon="mdi-lock"
           type="password"
         />
       </v-form>
     </v-card-text>
     <v-card-actions>
-      <nuxt />    <v-spacer />
+      <v-spacer />
       <v-btn color="primary">
         Login
       </v-btn>
