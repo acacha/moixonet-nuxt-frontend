@@ -19,17 +19,38 @@ https://nuxtjs.org/faq/host-port/
   "dev": "nuxt --hostname myhost --port 3333"
 }
 
-Actualitzeu tammbé cypress.json la variable **baseURL**
+Actualitzeu també cypress.json la variable **baseURL**
 
-# EXPLOTACIó
+Actualitzeu /etc/hosts
+
+nuxt.moixonet.acacha.scool.test 127.0.0.1
+
+# DEVELOPMENT
+
+nuxt.moixonet.acacha.scool.test
+
+
+# PRODUCCIó
 
 Domini explotació nuxt frontend:
 
 nuxt.moixonet.acacha.scool.cat
+nuxt.moixonet.genis99.scool.cat
+nuxt.moixonet.aycorrea.scool.cat
+nuxt.moixonet.dimobo.scool.cat
+nuxt.moixonet.karimlema9.scool.cat
+nuxt.moixonet.carloros.scool.cat
+nuxt.moixonet.gerardgb.scool.cat
 
 # Domini local:
 
-nuxt.moixonet.acacha.scool.test 
+nuxt.moixonet.acacha.scool.test
+nuxt.moixonet.genis99.scool.test
+nuxt.moixonet.aycorrea.scool.test
+nuxt.moixonet.dimobo.scool.test
+nuxt.moixonet.karimlema9.scool.test
+nuxt.moixonet.carloros.scool.test
+nuxt.moixonet.gerardgb.scool.test
 
 # DEPLOYMENT TYPES
 

@@ -5,7 +5,9 @@
       dark
       flat
     >
-      <v-toolbar-title data-test="auth_login_card_title">Creeu un usuari</v-toolbar-title>
+      <v-toolbar-title data-test="auth_login_card_title">
+        Creeu un usuari
+      </v-toolbar-title>
     </v-toolbar>
     <v-card-text>
       <v-form>
@@ -26,8 +28,8 @@
         />
 
         <v-text-field
-          data-test="password"
           id="password"
+          data-test="password"
           label="Paraula de pas"
           name="password"
           prepend-icon="mdi-lock"
@@ -36,7 +38,9 @@
       </v-form>
     </v-card-text>
     <v-card-actions>
-      <nuxt-link to="/login">Ja tinc un usuari</nuxt-link>
+      <nuxt-link to="/login">
+        Ja tinc un usuari
+      </nuxt-link>
       <v-spacer />
       <v-btn color="primary" data-test="login-button">
         Registrar-se

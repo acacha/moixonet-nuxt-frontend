@@ -1,12 +1,13 @@
 <template>
   <div class="container">
-    TODO LANDING PAGE
+    TODO HOME
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Index',
-  layout: 'landing'
+  middleware: ['auth'],
+  name: 'Home',
+  layout: 'default'
 }
 </script>

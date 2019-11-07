@@ -75,5 +75,4 @@ context('AuthLogin', () => {
     cy.get("[data-test='auth_login_button_login']").click()
     cy.url().should('eq', 'https://iesebre.scool.test/home')
   })
-
 })

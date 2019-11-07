@@ -1,63 +1,127 @@
 <template>
-  <v-app dark>
-    <nav>
-      <ul>
-        <li><a href="/channels">Channels</a></li>
-      </ul>
-      <ul>
-        <li><a href="/messages">Messages</a></li>
-      </ul>
-    </nav>
-    <nuxt />
+  <v-app id="inspire">
+    <v-navigation-drawer
+      v-model="drawer"
+      app
+      clipped
+    >
+      <v-list dense>
+        <template v-for="(item, i) in items">
+          <v-row
+            v-if="item.heading"
+            :key="i"
+            align="center"
+          >
+            <v-col cols="6">
+              <v-subheader v-if="item.heading">
+                {{ item.heading }}
+              </v-subheader>
+            </v-col>
+            <v-col
+              cols="6"
+              class="text-right"
+            />
+          </v-row>
+          <v-divider
+            v-else-if="item.divider"
+            :key="i"
+            dark
+            class="my-4"
+          />
+          <v-list-item
+            v-else
+            :key="i"
+            link
+            :to="item.to"
+            nuxt
+          >
+            <v-list-item-action>
+              <v-icon>{{ item.icon }}</v-icon>
+            </v-list-item-action>
+            <v-list-item-content>
+              <v-list-item-title class="grey--text">
+                {{ item.text }}
+              </v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </template>
+      </v-list>
+    </v-navigation-drawer>
+    <v-app-bar
+      app
+      clipped-right
+      clipped-left
+      color="blue-grey"
+      dark
+    >
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
+      <v-toolbar-title>Moixonet</v-toolbar-title>
+      <v-spacer />
+      <v-app-bar-nav-icon @click.stop="drawerRight = !drawerRight" />
+    </v-app-bar>
+
+    <v-navigation-drawer
+      v-model="left"
+      fixed
+      temporary
+    />
+
+    <v-content>
+      <nuxt />
+    </v-content>
+
+    <v-navigation-drawer
+      v-model="right"
+      fixed
+      right
+      temporary
+    />
+
+    <v-navigation-drawer
+      v-model="drawerRight"
+      app
+      clipped
+      right
+    >
+      <v-list dense>
+        <v-list-item>
+          <v-list-item-action>
+            <v-icon>mdi-access-point</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>TODO PERFIL</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer>
+
+    <v-footer
+      app
+      color="blue-grey"
+      class="white--text"
+    >
+      <span>Vuetify</span>
+      <v-spacer />
+      <span>&copy; 2019</span>
+    </v-footer>
   </v-app>
 </template>
 
-<style>
-html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
+<script>
+export default {
+  name: 'Default',
+  data: () => ({
+    drawer: false,
+    drawerRight: false,
+    right: false,
+    left: false,
+    items: [
+      { icon: 'mdi-home', text: 'Home', to: '/' },
+      { heading: 'Administració' },
+      { divider: true },
+      { icon: 'mdi-access-point', text: 'Canals', to: '/channels' },
+      { icon: 'mdi-message', text: 'Missatges', to: '/messages' }
+    ]
+  })
 }
-
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-  margin: 0;
-}
-
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
-}
-
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
-}
-
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
-
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
-}
-</style>
+</script>

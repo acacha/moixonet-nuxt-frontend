@@ -5,23 +5,25 @@
       dark
       flat
     >
-      <v-toolbar-title data-test="auth_login_card_title">Si us plau, entreu...</v-toolbar-title>
+      <v-toolbar-title data-test="auth_login_card_title">
+        Si us plau, entreu...
+      </v-toolbar-title>
     </v-toolbar>
     <v-card-text>
       <v-form>
         <v-text-field
+          v-model="email"
           data-test="auth_login_input_email"
           label="Correu electrònic"
           name="login"
-          prepend-icon="mdi-account"
+          prepend-icon="mdi-email"
           type="text"
-          v-model="email"
         />
 
         <v-text-field
-          data-test="auth_login_input_password"
           id="password"
           v-model="password"
+          data-test="auth_login_input_password"
           label="Paraula de pas"
           name="password"
           prepend-icon="mdi-lock"
@@ -30,9 +32,13 @@
       </v-form>
     </v-card-text>
     <v-card-actions>
-      <nuxt-link to="/register">Registrar-se</nuxt-link>&nbsp;<nuxt-link to="/password/reset">Recordar paraula de pas</nuxt-link>
+      <nuxt-link to="/register">
+        Registrar-se
+      </nuxt-link>&nbsp;<nuxt-link to="/password/reset">
+        Recordar paraula de pas
+      </nuxt-link>
       <v-spacer />
-      <v-btn color="primary" data-test="auth_login_button_login" @click="login" :loading="loading">
+      <v-btn color="primary" data-test="auth_login_button_login" :loading="loading" @click="login">
         Entrar
       </v-btn>
     </v-card-actions>

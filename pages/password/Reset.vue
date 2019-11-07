@@ -5,7 +5,9 @@
       dark
       flat
     >
-      <v-toolbar-title data-test="auth_login_card_title">Recordar paraula de pas</v-toolbar-title>
+      <v-toolbar-title data-test="auth_login_card_title">
+        Recordar paraula de pas
+      </v-toolbar-title>
     </v-toolbar>
     <v-card-text>
       <v-form>
@@ -19,7 +21,11 @@
       </v-form>
     </v-card-text>
     <v-card-actions>
-      <nuxt-link to="/register">Registrar-se</nuxt-link>&nbsp;<nuxt-link to="/login">Login</nuxt-link>
+      <nuxt-link to="/register">
+        Registrar-se
+      </nuxt-link>&nbsp;<nuxt-link to="/login">
+        Login
+      </nuxt-link>
       <v-spacer />
       <v-btn color="primary" data-test="login-button">
         Recordar paraula de pas
