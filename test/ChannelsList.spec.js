@@ -28,11 +28,6 @@ describe('ChannelsList', () => {
     expect(wrapper.isVueInstance()).toBeTruthy()
   })
 
-  test('renders and html list', () => {
-    const { wrapper } = build()
-    expect(wrapper.element).toMatchSnapshot()
-  })
-
   test('renders a list of channels', () => {
     const { wrapper } = build()
     expect(wrapper.element).toMatchSnapshot()

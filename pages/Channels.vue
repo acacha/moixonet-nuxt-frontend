@@ -1,8 +1,19 @@
 <template>
-  <channels-list></channels-list>
+    <channels-list :channels="channels"/>
 </template>
 
-<!--COMPONENT PÀGINA: SMART!!:-->
-<!-- - Axios -> connexió amb el backend i database-->
-<!-- - Altres lògiques més complexes-->
-<!-- - NO: Presentació-->
+<script>
+import ChannelsList from '../components/ChannelsList'
+import channelsFixture from '../cypress/fixtures/channels'
+export default {
+  name: 'Channels',
+  components: {
+    'channels-list': ChannelsList
+  },
+  data () {
+    return {
+      channels: channelsFixture
+    }
+  }
+}
+</script>
