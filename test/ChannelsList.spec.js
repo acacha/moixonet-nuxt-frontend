@@ -4,39 +4,37 @@ import channelsFixture from '../cypress/fixtures/channels'
 
 // https://vue-test-utils.vuejs.org/
 describe('ChannelsList', () => {
+  let opts
+
+  const build = (options) => {
+    options = options || opts
+    const wrapper = mount(ChannelsList, options)
+
+    return {
+      wrapper
+    }
+  }
+
+  beforeEach(() => {
+    opts = {
+      propsData: {
+        channels: channelsFixture
+      }
+    }
+  })
+
   test('is a Vue instance', () => {
-    const wrapper = mount(ChannelsList)
+    const { wrapper } = build()
     expect(wrapper.isVueInstance()).toBeTruthy()
   })
 
   test('renders and html list', () => {
-    const wrapper = mount(ChannelsList)
+    const { wrapper } = build()
     expect(wrapper.element).toMatchSnapshot()
   })
 
   test('renders a list of channels', () => {
-    // Necessitem passar-li els canals
-    const wrapper = mount(ChannelsList, {
-      propsData: {
-        channels: channelsFixture
-      }
-    })
-    console.log(wrapper.html())
+    const { wrapper } = build()
     expect(wrapper.element).toMatchSnapshot()
   })
-
-  // SNAPSHOT
-
-  // TEMPLATE
-
-  // test('is a Vue instance', () => {
-  //   const wrapper = mount(Logo)
-  //   expect(wrapper.isVueInstance()).toBeTruthy()
-  // })
-  //
-  // test('is a Vue instance', () => {
-  //   const wrapper = mount(Logo)
-  //   expect(wrapper.isVueInstance()).toBeTruthy()
-  // })
-  //
 })
