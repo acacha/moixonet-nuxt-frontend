@@ -13,7 +13,8 @@
     "lint-fix": "eslint --fix --ext .js,.vue --ignore-path .gitignore .",
     "test": "jest",
     "test:e2e": "cypress open",
-    "test:e2e:silent": "cypress"
+    "test:e2e:silent": "cypress",
+    "precommit": "npm run lint"
   },
   "dependencies": {
     "@nuxtjs/auth": "^4.8.4",

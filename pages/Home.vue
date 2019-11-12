@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  middleware: ['auth'],
+  // middleware: ['auth'],
   name: 'Home',
   layout: 'default'
 }

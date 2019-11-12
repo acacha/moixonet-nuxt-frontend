@@ -10,7 +10,7 @@ import messagesFixture from '../cypress/fixtures/messages'
 import AppMessages from '../components/AppMessages'
 
 export default {
-  middleware: ['auth'],
+  // middleware: ['auth'],
   name: 'Messages',
   components: {
     'app-messages': AppMessages

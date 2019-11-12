@@ -116,11 +116,13 @@ export default {
     right: false,
     left: false,
     items: [
-      { icon: 'mdi-home', text: 'Home', to: '/' },
+      { icon: 'mdi-home', text: 'Home', to: '/home' },
       { heading: 'Administració' },
       { divider: true },
       { icon: 'mdi-access-point', text: 'Canals', to: '/channels' },
-      { icon: 'mdi-message', text: 'Missatges', to: '/messages' }
+      { icon: 'mdi-message', text: 'Missatges', to: '/messages' },
+      { icon: 'mdi-message', text: 'Sobre nosaltres', to: '/about' },
+      { icon: 'mdi-message', text: 'Contact', to: '/contact' }
     ]
   })
 }

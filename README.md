@@ -41,6 +41,7 @@ nuxt.moixonet.dimobo.scool.cat
 nuxt.moixonet.karimlema9.scool.cat
 nuxt.moixonet.carloros.scool.cat
 nuxt.moixonet.gerardgb.scool.cat
+nuxt.moixonet.jotaela.scool.cat
 
 # Domini local:
 
@@ -51,6 +52,7 @@ nuxt.moixonet.dimobo.scool.test
 nuxt.moixonet.karimlema9.scool.test
 nuxt.moixonet.carloros.scool.test
 nuxt.moixonet.gerardgb.scool.test
+nuxt.moixonet.jotaela.scool.test
 
 # DEPLOYMENT TYPES
 
