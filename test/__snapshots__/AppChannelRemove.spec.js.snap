@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppChannelRemove renders a list of channels 1`] = `
+<button>
+  Eliminar
+</button>
+`;

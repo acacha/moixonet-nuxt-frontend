@@ -1,7 +1,7 @@
 <template>
   <span>
     <app-channels-form @added="add" />
-    <app-channels-list :channels="channels" />
+    <app-channels-list :channels="channels" @removed="remove" />
   </span>
 </template>
 
@@ -27,6 +27,9 @@ export default {
         id: 5,
         name
       })
+    },
+    remove (channel) {
+      this.channels.splice(this.channels.indexOf(channel), 1)
     }
   }
 }
