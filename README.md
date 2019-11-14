@@ -1,12 +1,68 @@
+# GUIA 14 novembre
+
+- Composició Page: múltiple components -> comunicació entre germans
+  - Primer exemple sense Vuex:
+  - Form i List comparteixen estat: channels
+- Copiar testos proporcionats professor
+- PAGE DESIGN PATTERN: Hi ha un objecte/mètode (a l'exemple build()) que conté totsels elements d'una pàgina/component
+
+# COMPONENTS
+
+---------------------------------
+| PAGE COMPONENT: Channels      |
+|  ChannelsForm                 |
+|  ChannelsList                 |
+|                               |
+|                               |
+---------------------------------
+
+Page Component: compositions multiple subcomponents
+
 # TESTING
 
 ## E2E CYPRESS
 
-
-
 ## UNIT TESTING: Vue Test Utils
 
 https://medium.com/magnetis-backstage/working-an-application-in-vue-js-with-tdd-an-extensive-guide-for-people-who-have-time-part-3-7a68ad3f5fb1
+
+### Events
+
+- Event input molt important és el que es dispara quan es canvia el contingut d'un camp de formulari (input, textarea, similars)
+Interacció amb formularis:
+- trigger() -> disparar events
+  - trigger('click') -> Click
+  - trigger('input') -> input
+- element -> Permet accedir a l'element HTML
+- element.value = valor del camp de formulari
+- type:
+  - x.element.value = 'Nou valor' x.trigger('input')
+  
+Tests assertions
+
+```
+wrapper.vm.$emit('foo')
+wrapper.vm.$emit('foo', 123)
+
+/*
+wrapper.emitted() returns the following object:
+{
+  foo: [[], [123]]
+}
+*/
+
+// assert event has been emitted
+expect(wrapper.emitted().foo).toBeTruthy()
+// assert event count
+expect(wrapper.emitted().foo.length).toBe(2)
+// assert event payload
+expect(wrapper.emitted().foo[1]).toEqual([123])  
+``` 
+
+Search text:
+-  
+Key events:
+
 
 # Requeriments
 

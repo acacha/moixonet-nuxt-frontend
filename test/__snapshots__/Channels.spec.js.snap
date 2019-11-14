@@ -1,7 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Channels renders a list of channels 1`] = `
-<channels-list
+exports[`Channels renders the component 1`] = `
+<span
   channels="[object Object],[object Object],[object Object]"
-/>
+>
+  <channels-form-stub />
+   
+  <channels-list-stub
+    channels="[object Object],[object Object],[object Object]"
+  />
+</span>
 `;

@@ -1,6 +1,7 @@
 import { shallowMount } from '@vue/test-utils'
 import Channels from '../pages/Channels'
 import ChannelsList from '../components/ChannelsList'
+import ChannelsForm from '../components/ChannelsForm'
 import channelsFixture from '../cypress/fixtures/channels'
 
 describe('Channels', () => {
@@ -9,9 +10,13 @@ describe('Channels', () => {
   const build = (options) => {
     options = options || opts
     const wrapperShallow = shallowMount(Channels, options)
+    const channelsList = wrapperShallow.find(ChannelsList)
+    const channelsForm = wrapperShallow.find(ChannelsForm)
 
     return {
-      wrapperShallow
+      wrapperShallow,
+      channelsList,
+      channelsForm
     }
   }
 
@@ -34,14 +39,13 @@ describe('Channels', () => {
   })
 
   test('renders child components', () => {
-    const { wrapperShallow } = build()
-    const channelsList = wrapperShallow.find(ChannelsList)
+    const { channelsList, channelsForm } = build()
     expect(channelsList.exists()).toBe(true)
+    expect(channelsForm.exists()).toBe(true)
   })
 
   test('Passes a channels prop to channels list component', () => {
-    const { wrapperShallow } = build()
-    const channelsList = wrapperShallow.find(ChannelsList)
+    const { channelsList } = build()
     expect(channelsList.vm.channels).toBe(channelsFixture)
   })
 })
