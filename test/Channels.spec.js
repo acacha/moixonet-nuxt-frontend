@@ -1,7 +1,7 @@
 import { shallowMount } from '@vue/test-utils'
 import Channels from '../pages/Channels'
-import ChannelsList from '../components/ChannelsList'
-import ChannelsForm from '../components/ChannelsForm'
+import VChannelsList from '../components/AppChannelsList'
+import VChannelsForm from '../components/AppChannelsForm'
 import channelsFixture from '../cypress/fixtures/channels'
 
 describe('Channels', () => {
@@ -10,8 +10,8 @@ describe('Channels', () => {
   const build = (options) => {
     options = options || opts
     const wrapperShallow = shallowMount(Channels, options)
-    const channelsList = wrapperShallow.find(ChannelsList)
-    const channelsForm = wrapperShallow.find(ChannelsForm)
+    const channelsList = wrapperShallow.find(VChannelsList)
+    const channelsForm = wrapperShallow.find(VChannelsForm)
 
     return {
       wrapperShallow,

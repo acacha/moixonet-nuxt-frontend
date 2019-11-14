@@ -1,14 +1,14 @@
 import { mount } from '@vue/test-utils'
-import ChannelsList from '../components/ChannelsList'
+import AppChannelsList from '../components/AppChannelsList'
 import channelsFixture from '../cypress/fixtures/channels'
 
 // https://vue-test-utils.vuejs.org/
-describe('ChannelsList', () => {
+describe('AppChannelsList', () => {
   let opts
 
   const build = (options) => {
     options = options || opts
-    const wrapper = mount(ChannelsList, options)
+    const wrapper = mount(AppChannelsList, options)
 
     return {
       wrapper

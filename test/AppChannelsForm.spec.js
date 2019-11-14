@@ -1,14 +1,12 @@
 import { mount } from '@vue/test-utils'
-import ChannelsForm from '../components/ChannelsForm'
-import channelsFixture from '../cypress/fixtures/channels'
+import AppChannelsForm from '../components/AppChannelsForm'
 
-// https://vue-test-utils.vuejs.org/
-describe('ChannelsForm', () => {
+describe('AppChannelsForm', () => {
   let opts
 
   const build = (options) => {
     options = options || opts
-    const wrapper = mount(ChannelsForm, options)
+    const wrapper = mount(AppChannelsForm, options)
     const channelNameInput = wrapper.find('[data-test=input_name]')
     const addButton = wrapper.find('[data-test=add_button]')
 

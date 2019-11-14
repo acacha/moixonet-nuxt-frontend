@@ -1,5 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`AppChannelsList renders a list of channels 1`] = `
+<ul>
+  <li>
+    Canal 1
+  </li>
+  <li>
+    Canal 2
+  </li>
+  <li>
+    Canal 3
+  </li>
+</ul>
+`;
+
 exports[`ChannelsList renders a list of channels 1`] = `
 <ul>
   <li>

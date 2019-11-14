@@ -4,9 +4,9 @@ exports[`Channels renders the component 1`] = `
 <span
   channels="[object Object],[object Object],[object Object]"
 >
-  <channels-form-stub />
+  <app-channels-form-stub />
    
-  <channels-list-stub
+  <app-channels-list-stub
     channels="[object Object],[object Object],[object Object]"
   />
 </span>

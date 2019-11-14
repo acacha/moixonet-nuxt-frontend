@@ -10,14 +10,20 @@
 
 ---------------------------------
 | PAGE COMPONENT: Channels      |
-|  ChannelsForm                 |
-|  ChannelsList                 |
-|                               |
+|  VChannelsForm                |
+|  VChannelsList                |
 |                               |
 ---------------------------------
 
 Page Component: compositions multiple subcomponents
 
+Smart Components:
+ - Channels: és una View o Page
+Dun components/Presentational components/ Base components
+ - VChannelsForm | VChannelsList
+
+- https://medium.com/magnetis-backstage/working-an-application-in-vue-js-with-tdd-an-extensive-guide-for-people-who-have-time-part-1-3be791dafa2b
+- https://vuejs.org/v2/style-guide/#Base-component-names-strongly-recommended
 # TESTING
 
 ## E2E CYPRESS

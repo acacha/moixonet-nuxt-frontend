@@ -7,10 +7,10 @@
     </button>
   </form>
 </template>
-s
+
 <script>
 export default {
-  name: 'Channelsform',
+  name: 'VChannelsform',
   data () {
     return {
       name: '',
