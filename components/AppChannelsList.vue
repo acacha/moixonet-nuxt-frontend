@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'VChannelsList',
+  name: 'AppChannelsList',
   props: {
     channels: {
       type: Array,

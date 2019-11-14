@@ -13,31 +13,3 @@ exports[`AppChannelsList renders a list of channels 1`] = `
   </li>
 </ul>
 `;
-
-exports[`ChannelsList renders a list of channels 1`] = `
-<ul>
-  <li>
-    Canal 1
-  </li>
-  <li>
-    Canal 2
-  </li>
-  <li>
-    Canal 3
-  </li>
-</ul>
-`;
-
-exports[`ChannelsList renders and html list 1`] = `
-<ul>
-  <li>
-    Canal 1
-  </li>
-  <li>
-    Canal 2
-  </li>
-  <li>
-    Canal 3
-  </li>
-</ul>
-`;
