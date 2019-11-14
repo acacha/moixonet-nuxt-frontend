@@ -1,7 +1,7 @@
 import { shallowMount } from '@vue/test-utils'
 import Channels from '../pages/Channels'
-import VChannelsList from '../components/AppChannelsList'
-import VChannelsForm from '../components/AppChannelsForm'
+import AppChannelsList from '../components/AppChannelsList'
+import AppChannelsForm from '../components/AppChannelsForm'
 import channelsFixture from '../cypress/fixtures/channels'
 
 describe('Channels', () => {
@@ -15,8 +15,8 @@ describe('Channels', () => {
     // va obtenir el valor a la primera crida
     return {
       wrapperShallow,
-      channelsList: () => wrapperShallow.find(VChannelsList),
-      channelsForm: () => wrapperShallow.find(VChannelsForm)
+      channelsList: () => wrapperShallow.find(AppChannelsList),
+      channelsForm: () => wrapperShallow.find(AppChannelsForm)
     }
   }
 

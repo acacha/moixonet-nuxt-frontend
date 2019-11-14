@@ -8,8 +8,9 @@ https://medium.com/magnetis-backstage/working-an-application-in-vue-js-with-tdd-
   - Form i List comparteixen estat: channels
 - Copiar testos proporcionats professor
 - PAGE DESIGN PATTERN: Hi ha un objecte/mètode (a l'exemple build()) que conté totsels elements d'una pàgina/component
-- Compoent dumb i smart i notació Vue
+- Component dumb i smart i notació Vue
 - CONFIG ESLINT JEST
+- VUEX: Store (shared data)
 
 # COMPONENTS
 
@@ -20,11 +21,15 @@ https://medium.com/magnetis-backstage/working-an-application-in-vue-js-with-tdd-
 |                               |
 ---------------------------------
 
+
+ConfirmDialog -> Dialog
+AnnouncementDialog -> Dialog
+
 Page Component: compositions multiple subcomponents
 
 Smart Components:
  - Channels: és una View o Page
-Dun components/Presentational components/ Base components
+Dumb components/Presentational components/ Base components
  - VChannelsForm | VChannelsList
 
 - https://medium.com/magnetis-backstage/working-an-application-in-vue-js-with-tdd-an-extensive-guide-for-people-who-have-time-part-1-3be791dafa2b
