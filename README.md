@@ -1,3 +1,6 @@
+https://github.com/kuroski/article-tdd-vue
+https://medium.com/magnetis-backstage/working-an-application-in-vue-js-with-tdd-an-extensive-guide-for-people-who-have-time-part-1-3be791dafa2b
+
 # GUIA 14 novembre
 
 - Composició Page: múltiple components -> comunicació entre germans
@@ -5,6 +8,8 @@
   - Form i List comparteixen estat: channels
 - Copiar testos proporcionats professor
 - PAGE DESIGN PATTERN: Hi ha un objecte/mètode (a l'exemple build()) que conté totsels elements d'una pàgina/component
+- Compoent dumb i smart i notació Vue
+- CONFIG ESLINT JEST
 
 # COMPONENTS
 

@@ -21,7 +21,7 @@ export default {
     }
   },
   methods: {
-    // operació sobre un element estat -> commit a Vuex
+    // operació sobre un element d'estat -> commit a Vuex
     add (name) {
       this.channels.push({
         id: 5,
