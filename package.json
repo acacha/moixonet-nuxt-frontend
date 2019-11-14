@@ -14,7 +14,8 @@
     "test": "jest",
     "test:e2e": "cypress open",
     "test:e2e:silent": "cypress",
-    "precommit": "npm run lint"
+    "precommit": "npm run lint",
+    "open": "sensible-browser http://nuxt.moixonet.acacha.scool.test:3333/"
   },
   "dependencies": {
     "@nuxtjs/auth": "^4.8.4",

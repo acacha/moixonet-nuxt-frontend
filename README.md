@@ -1,3 +1,13 @@
+# TESTING
+
+## E2E CYPRESS
+
+
+
+## UNIT TESTING: Vue Test Utils
+
+https://medium.com/magnetis-backstage/working-an-application-in-vue-js-with-tdd-an-extensive-guide-for-people-who-have-time-part-3-7a68ad3f5fb1
+
 # Requeriments
 
 ```
