@@ -30,7 +30,8 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '~/plugins/eventBus.client.js'
+    '~/plugins/eventBus.client.js',
+    '~/plugins/snackbar.client.js'
   ],
   /*
   ** Nuxt.js dev-modules

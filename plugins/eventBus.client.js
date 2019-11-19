@@ -1,9 +1,9 @@
 import Vue from 'vue'
+import { EventBus } from './event-bus.js'
 
-const eventBus = new Vue()
 // this helps WebStorm with autocompletion, otherwise it's not needed
-Vue.prototype.$eventBus = eventBus
+Vue.prototype.$eventBus = EventBus
 
 export default ({ app }, inject) => {
-  inject('eventBus', eventBus)
+  inject('eventBus', EventBus)
 }
