@@ -3,8 +3,12 @@ import Vuetify from 'vuetify'
 import Vue from 'vue'
 import flushPromises from 'flush-promises'
 import Login from '../pages/Login'
+import snackbar from '../plugins/snackbar'
+jest.mock('../plugins/snackbar.js')
 
 Vue.use(Vuetify)
+Vue.use(snackbar)
+
 describe('Login', () => {
   let opts
   const auth = {
@@ -21,6 +25,7 @@ describe('Login', () => {
     const wrapper = mount(Login, options)
 
     return {
+      wrapper,
       wrapperShallow,
       loginButton: () => wrapper.find('[data-test=auth_login_button_login]'),
       emailInputField: () => wrapper.find('[data-test=auth_login_input_email]'),
@@ -100,5 +105,36 @@ describe('Login', () => {
 
     expect(snackbar.showError).toHaveBeenCalled()
     expect(snackbar.showError.mock.calls[0][0]).toEqual('Error occurred')
+  })
+
+  test('shows error on error login 2', async () => {
+    const auth = {
+      loginWith: jest.fn().mockRejectedValue('Error occurred')
+    }
+    opts = {
+      stubs: ['nuxt-link'],
+      sync: false,
+      mocks: {
+        $auth: auth
+      },
+      vuetify: new Vuetify({
+        mocks: {
+          $vuetify: {
+            breakpoint: {} // STUB BREAKPOINTS SERVICE: https://vuetifyjs.com/en/getting-started/unit-testing#mocking-vuetify
+          }
+        }
+      })
+    }
+    const { wrapper, loginButton, emailInputField, passwordInputField } = build(opts)
+    emailInputField().element.value = 'sergiturbadenas@gmail.com'
+    emailInputField().trigger('input')
+    passwordInputField().element.value = '12345678'
+    passwordInputField().trigger('input')
+    loginButton().trigger('click')
+
+    await flushPromises()
+
+    expect(wrapper.vm.$snackbar.showError).toHaveBeenCalled()
+    expect(wrapper.vm.$snackbar.showError.mock.calls[0][0]).toEqual('Error occurred')
   })
 })
