@@ -31,8 +31,8 @@
           <v-list-item
             v-else
             :key="i"
-            link
             :to="item.to"
+            link
             nuxt
           >
             <v-list-item-action>

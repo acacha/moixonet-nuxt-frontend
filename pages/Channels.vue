@@ -10,6 +10,7 @@ import AppChannelsList from '../components/AppChannelsList'
 import AppChannelsForm from '../components/AppChannelsForm'
 import channelsFixture from '../cypress/fixtures/channels'
 export default {
+  middleware: ['auth'],
   name: 'Channels',
   components: {
     'app-channels-list': AppChannelsList,

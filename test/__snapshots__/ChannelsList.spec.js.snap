@@ -3,13 +3,37 @@
 exports[`AppChannelsList renders a list of channels 1`] = `
 <ul>
   <li>
-    Canal 1
+    
+    Canal 1 
+    <button
+      data-test="remove-button"
+    >
+      
+  Eliminar
+
+    </button>
   </li>
   <li>
-    Canal 2
+    
+    Canal 2 
+    <button
+      data-test="remove-button"
+    >
+      
+  Eliminar
+
+    </button>
   </li>
   <li>
-    Canal 3
+    
+    Canal 3 
+    <button
+      data-test="remove-button"
+    >
+      
+  Eliminar
+
+    </button>
   </li>
 </ul>
 `;

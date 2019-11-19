@@ -3,14 +3,14 @@
     <form>
       Title: <input v-model="title" data-test="new_message_title" type="text" placeholder="Títol">
       Description: <input v-model="description" data-test="new_message_description" type="text" placeholder="Descripció">
-      <button data-test="add_button" @click.prevent="add">
+      <button @click.prevent="add" data-test="add_button">
         Afegir
       </button>
     </form>
     <ul>
       <li v-for="message in messages" :key="message.id">
-        <input v-if="editing === message.id" v-model="newTitle" type="text" :data-test="'new_title_' + message.id" @blur="update(message)">
-        <input v-if="editing === message.id" v-model="newDescription" type="text" :data-test="'new_description_' + message.id" @blur="update(message)">
+        <input v-if="editing === message.id" v-model="newTitle" :data-test="'new_title_' + message.id" @blur="update(message)" type="text">
+        <input v-if="editing === message.id" v-model="newDescription" :data-test="'new_description_' + message.id" @blur="update(message)" type="text">
         <span v-else>{{ message.title }} | {{ message.description }}  </span>
         <button :data-test="'delete_button_' + message.id" @click="remove(message)">
           Eliminar

@@ -1,7 +1,39 @@
+# GUIA 18 novembre
+- Vuetify: Video vuemastery: https://vuetifyjs.com/en/
+- git status? tot net i pujat a Github
+- npm update / npm install
+- npm run lintfix i utilitzar PHPSTORM per corregir automàticament errors eslint
+- npm run dev: comprovar estat aplicació
+- DOTENV (.env) instal·lat ara falta crear/utilitzar fitxer .env i utilitzar-lo
+  - Configuració URLS API BACKEND per local i producció
+  - Mòdul auth nuxt: this.$auth.loginWith()
+    - Configuració al fitxer **nuxt.config.js**:  
+      - process.env.LARAVEL_PASSPORT_ENDPOINT: http://moixonet-backend.test/
+      - process.env.LARAVEL_ENDPOINT: http://moixonet-backend.test/
+- Com veure les rutes de nuxt:
+  - **.nuxt/router.js**
+- TESTOS:
+  - npm run test
+  - npm run test:watch
+    - u: update snapshot
+
+SNACKBAR:
+- Mostrar errors
+  - https://vuetifyjs.com/en/components/snackbars
+  - Alternatives: 
+    - Alerts: https://vuetifyjs.com/en/components/alerts
+    - Dialogs: https://vuetifyjs.com/en/components/dialogs
+- Component global
+  - Molts components necessitaran comunicar-se amb l'usuari mostrant missatges
+  - NO cal i no es recomanable posar un snackbar/dialog/alert a cada component
+  - Utilitzar un component global, que posarem al layout
+  - Utilitzar un plugin vue per injectar la funcionalitat a tots els components: this.$snackbar    
+      
+# GUIA 14 novembre
+
 https://github.com/kuroski/article-tdd-vue
 https://medium.com/magnetis-backstage/working-an-application-in-vue-js-with-tdd-an-extensive-guide-for-people-who-have-time-part-1-3be791dafa2b
 
-# GUIA 14 novembre
 
 - Composició Page: múltiple components -> comunicació entre germans
   - Primer exemple sense Vuex:

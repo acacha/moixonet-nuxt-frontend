@@ -38,7 +38,7 @@
         Recordar paraula de pas
       </nuxt-link>
       <v-spacer />
-      <v-btn color="primary" data-test="auth_login_button_login" :loading="loading" @click="login">
+      <v-btn :loading="loading" @click="login" color="primary" data-test="auth_login_button_login">
         Entrar
       </v-btn>
     </v-card-actions>
