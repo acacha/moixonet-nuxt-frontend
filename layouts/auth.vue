@@ -1,6 +1,7 @@
 <template>
   <v-app id="inspire">
     <v-content>
+      <app-snackbar v-model="snackbar" :message="message" :color="color"/>
       <v-container
         class="fill-height"
         fluid
@@ -21,6 +22,24 @@
     </v-content>
   </v-app>
 </template>
+
+<script>
+import AppSnackbar from '../components/AppSnackbar'
+
+export default {
+  name: 'Auth',
+  components: {
+    'app-snackbar': AppSnackbar
+  },
+  data () {
+    return {
+      snackbar: false,
+      message: 'HOLA QUE TAL!',
+      color: 'error'
+    }
+  }
+}
+</script>
 
 <style>
 html {

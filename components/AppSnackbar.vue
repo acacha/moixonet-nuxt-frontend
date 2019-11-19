@@ -5,7 +5,7 @@
   >
     {{ message }}
     <v-btn
-      color="primary"
+      color="white"
       text
       data-test="close_button"
       @click="toggle"
@@ -29,6 +29,7 @@ export default {
     },
     color: {
       type: String,
+      default: 'success',
       validator: (value) => {
         // El valor debe coincidir con una de estas cadenas de texto
         return ['success', 'warning', 'error'].includes(value)
