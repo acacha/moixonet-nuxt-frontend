@@ -17,7 +17,7 @@
   - npm run test:watch
     - u: update snapshot
 
-SNACKBAR:
+## SNACKBAR:
 - Mostrar errors
   - https://vuetifyjs.com/en/components/snackbars
   - Alternatives: 
@@ -28,7 +28,15 @@ SNACKBAR:
   - NO cal i no es recomanable posar un snackbar/dialog/alert a cada component
   - Utilitzar un component global, que posarem al layout
   - Utilitzar un plugin vue per injectar la funcionalitat a tots els components: this.$snackbar    
-      
+
+TDD SNACKBAR:
+- Testing amb llibreries de tercers i/o plugins Vue (Vuetify és un plugin Vue)  
+  - API: 
+    - Es pot canviar color snackbar: Success | Error | Info
+    - I missatge snackbar
+    - Posició fixa part inferior centrat
+    - Timeout fix       
+     
 # GUIA 14 novembre
 
 https://github.com/kuroski/article-tdd-vue

@@ -1,0 +1,110 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppSnackbar renders the component 1`] = `
+<v-snackbar-stub
+  timeout="6000"
+  value="true"
+>
+  
+  Put your message here
+  
+  <v-btn-stub
+    activeclass=""
+    color="primary"
+    data-test="close_button"
+    tag="button"
+    text="true"
+    type="button"
+  >
+    
+    Tancar
+  
+  </v-btn-stub>
+</v-snackbar-stub>
+`;
+
+exports[`AppSnackbar renders the component with default props 1`] = `
+<v-snackbar-stub
+  timeout="6000"
+>
+  
+  Put your message here
+  
+  <v-btn-stub
+    activeclass=""
+    color="primary"
+    data-test="close_button"
+    tag="button"
+    text="true"
+    type="button"
+  >
+    
+    Tancar
+  
+  </v-btn-stub>
+</v-snackbar-stub>
+`;
+
+exports[`AppSnackbar renders the default message 1`] = `
+<div
+  class="v-snack v-snack--active v-snack--bottom"
+  name="v-snack-transition"
+>
+  <div
+    class="v-snack__wrapper"
+  >
+    <div
+      class="v-snack__content"
+    >
+      
+  Put your message here
+  
+      <button
+        class="v-btn v-btn--flat v-btn--text theme--light v-size--default primary--text"
+        data-test="close_button"
+        type="button"
+      >
+        <span
+          class="v-btn__content"
+        >
+          
+    Tancar
+  
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`AppSnackbar renders the passed message 1`] = `
+<div
+  class="v-snack v-snack--active v-snack--bottom"
+  name="v-snack-transition"
+>
+  <div
+    class="v-snack__wrapper"
+  >
+    <div
+      class="v-snack__content"
+    >
+      
+  Unexpected error
+  
+      <button
+        class="v-btn v-btn--flat v-btn--text theme--light v-size--default primary--text"
+        data-test="close_button"
+        type="button"
+      >
+        <span
+          class="v-btn__content"
+        >
+          
+    Tancar
+  
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+`;
