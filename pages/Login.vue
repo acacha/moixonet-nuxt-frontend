@@ -66,6 +66,8 @@ export default {
         }
       }).then(() => {
         this.loading = false
+      }).catch((error) => {
+        this.$snackbar.showError(error)
       })
     }
   }

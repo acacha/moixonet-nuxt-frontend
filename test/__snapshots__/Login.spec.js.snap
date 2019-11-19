@@ -1,0 +1,197 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login can login 1`] = `
+<v-card-stub
+  class="elevation-12"
+  loaderheight="4"
+  tag="div"
+>
+  <v-toolbar-stub
+    color="primary"
+    dark="true"
+    extensionheight="48"
+    flat="true"
+    src=""
+    tag="header"
+    tile="true"
+  >
+    <v-toolbar-title-stub
+      data-test="auth_login_card_title"
+      datatest="auth_login_card_title"
+    >
+      
+      Si us plau, entreu...
+    
+    </v-toolbar-title-stub>
+  </v-toolbar-stub>
+   
+  <v-card-text-stub>
+    <v-form-stub>
+      <v-text-field-stub
+        backgroundcolor=""
+        clearicon="$clear"
+        data-test="auth_login_input_email"
+        errorcount="1"
+        errormessages=""
+        label="Correu electrònic"
+        loaderheight="2"
+        messages=""
+        name="login"
+        prependicon="mdi-email"
+        rules=""
+        successmessages=""
+        type="text"
+        value=""
+      />
+       
+      <v-text-field-stub
+        backgroundcolor=""
+        clearicon="$clear"
+        data-test="auth_login_input_password"
+        errorcount="1"
+        errormessages=""
+        id="password"
+        label="Paraula de pas"
+        loaderheight="2"
+        messages=""
+        name="password"
+        prependicon="mdi-lock"
+        rules=""
+        successmessages=""
+        type="password"
+        value=""
+      />
+    </v-form-stub>
+  </v-card-text-stub>
+   
+  <v-card-actions-stub>
+    <nuxt-link-stub
+      to="/register"
+    >
+      
+      Registrar-se
+    
+    </nuxt-link-stub>
+     
+    <nuxt-link-stub
+      to="/password/reset"
+    >
+      
+      Recordar paraula de pas
+    
+    </nuxt-link-stub>
+     
+    <v-spacer-stub />
+     
+    <v-btn-stub
+      activeclass=""
+      color="primary"
+      data-test="auth_login_button_login"
+      tag="button"
+      type="button"
+    >
+      
+      Entrar
+    
+    </v-btn-stub>
+  </v-card-actions-stub>
+</v-card-stub>
+`;
+
+exports[`Login renders the component 1`] = `
+<v-card-stub
+  class="elevation-12"
+  loaderheight="4"
+  tag="div"
+>
+  <v-toolbar-stub
+    color="primary"
+    dark="true"
+    extensionheight="48"
+    flat="true"
+    src=""
+    tag="header"
+    tile="true"
+  >
+    <v-toolbar-title-stub
+      data-test="auth_login_card_title"
+      datatest="auth_login_card_title"
+    >
+      
+      Si us plau, entreu...
+    
+    </v-toolbar-title-stub>
+  </v-toolbar-stub>
+   
+  <v-card-text-stub>
+    <v-form-stub>
+      <v-text-field-stub
+        backgroundcolor=""
+        clearicon="$clear"
+        data-test="auth_login_input_email"
+        errorcount="1"
+        errormessages=""
+        label="Correu electrònic"
+        loaderheight="2"
+        messages=""
+        name="login"
+        prependicon="mdi-email"
+        rules=""
+        successmessages=""
+        type="text"
+        value=""
+      />
+       
+      <v-text-field-stub
+        backgroundcolor=""
+        clearicon="$clear"
+        data-test="auth_login_input_password"
+        errorcount="1"
+        errormessages=""
+        id="password"
+        label="Paraula de pas"
+        loaderheight="2"
+        messages=""
+        name="password"
+        prependicon="mdi-lock"
+        rules=""
+        successmessages=""
+        type="password"
+        value=""
+      />
+    </v-form-stub>
+  </v-card-text-stub>
+   
+  <v-card-actions-stub>
+    <nuxt-link-stub
+      to="/register"
+    >
+      
+      Registrar-se
+    
+    </nuxt-link-stub>
+     
+    <nuxt-link-stub
+      to="/password/reset"
+    >
+      
+      Recordar paraula de pas
+    
+    </nuxt-link-stub>
+     
+    <v-spacer-stub />
+     
+    <v-btn-stub
+      activeclass=""
+      color="primary"
+      data-test="auth_login_button_login"
+      tag="button"
+      type="button"
+    >
+      
+      Entrar
+    
+    </v-btn-stub>
+  </v-card-actions-stub>
+</v-card-stub>
+`;

@@ -1,4 +1,5 @@
 # GUIA 18 novembre
+
 - Vuetify: Video vuemastery: https://vuetifyjs.com/en/
 - git status? tot net i pujat a Github
 - npm update / npm install
@@ -35,8 +36,18 @@ TDD SNACKBAR:
     - Es pot canviar color snackbar: Success | Error | Info
     - I missatge snackbar
     - Posició fixa part inferior centrat
-    - Timeout fix       
+    - Timeout fix  
+
+# TEST COVERAGE
+
+- Resum que apareix al final execució de testos i que ens ajuda a localitzar línies de codi propi que no s'executa en cap test
+- 100% cobertura: totes les línies del nostre codi s'executen al menys un cop durant testos. No implica 100% efectivitat o que la app estigui lliure errors
+- Configurat automàticament amb Nuxt
+    
 # EVENT BUS
+- Sistema simple de comunicació events entre components
+- Bus: nom tambe utilitzem en hardware (bus de comunicació que utilitzen diferents components de hardware per intercanviar informació)
+- Events: sistema comú (Laravel i altres frameworks igual) per connectar components entre si 
 
 **plugins/eventBus.client.js**:
 
@@ -53,6 +64,10 @@ export default ({app}, inject) => {
 ```  
 
 https://tech.onestopbeauty.online/front-end/simple-eventBus-in-nuxt/
+
+# VUE ROUTER TESTING / NUXT
+
+- https://vue-test-utils.vuejs.org/api/components/#routerlinkstub
      
 # GUIA 14 novembre
 
