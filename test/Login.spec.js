@@ -1,8 +1,8 @@
 import { shallowMount, mount } from '@vue/test-utils'
 import Vuetify from 'vuetify'
 import Vue from 'vue'
-import Login from '../pages/Login'
 import flushPromises from 'flush-promises'
+import Login from '../pages/Login'
 
 Vue.use(Vuetify)
 describe('Login', () => {
