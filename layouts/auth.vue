@@ -1,7 +1,7 @@
 <template>
   <v-app id="inspire">
     <v-content>
-      <app-snackbar v-model="snackbar" :message="message" :color="color"/>
+      <app-snackbar v-model="snackbar" :message="message" :color="color" />
       <v-container
         class="fill-height"
         fluid
@@ -37,6 +37,15 @@ export default {
       message: 'HOLA QUE TAL!',
       color: 'error'
     }
+  },
+  mounted () {
+    this.$eventBus.$on('showSnackbar', (message, color) => {
+      message = message || 'Put your message here'
+      color = color || 'success'
+      this.snackbar = true
+      this.message = message
+      this.color = color
+    })
   }
 }
 </script>

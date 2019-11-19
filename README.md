@@ -36,6 +36,23 @@ TDD SNACKBAR:
     - I missatge snackbar
     - Posició fixa part inferior centrat
     - Timeout fix       
+# EVENT BUS
+
+**plugins/eventBus.client.js**:
+
+```javascript
+import Vue from 'vue'
+
+const eventBus = new Vue();
+//this helps WebStorm with autocompletion, otherwise it's not needed
+Vue.prototype.$eventBus = eventBus;
+
+export default ({app}, inject) => {
+    inject('eventBus', eventBus);
+}
+```  
+
+https://tech.onestopbeauty.online/front-end/simple-eventBus-in-nuxt/
      
 # GUIA 14 novembre
 

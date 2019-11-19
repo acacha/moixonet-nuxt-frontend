@@ -1,14 +1,14 @@
 <template>
   <v-snackbar
-    v-model="show"
+    v-model="showProp"
     :color="color"
   >
     {{ message }}
     <v-btn
+      @click="toggle"
       color="white"
       text
       data-test="close_button"
-      @click="toggle"
     >
       Tancar
     </v-btn>
@@ -40,9 +40,19 @@ export default {
       default: 'Put your message here'
     }
   },
+  computed: {
+    showProp: {
+      get () {
+        return this.show
+      },
+      set (newValue) {
+        this.$emit('toggle', newValue)
+      }
+    }
+  },
   methods: {
     toggle () {
-      this.$emit('toggle')
+      this.$emit('toggle', !this.showProp)
     }
   }
 }
