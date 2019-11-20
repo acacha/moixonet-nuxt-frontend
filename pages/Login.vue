@@ -6,14 +6,7 @@
     <template v-slot:form>
       <v-card-text>
         <v-form>
-          <v-text-field
-            v-model="email"
-            data-test="auth_login_input_email"
-            label="Correu electrònic"
-            name="login"
-            prepend-icon="mdi-email"
-            type="text"
-          />
+          <app-text-field-email-required v-model="email" name="email" label="Correu electrònic"/>
 
           <v-text-field
             id="password"
@@ -43,11 +36,13 @@
 
 <script>
 import AppCardWithForm from '../components/AppCardWithForm'
+import AppTextFieldEmailRequired from '../components/AppTextFieldEmailRequired'
 export default {
   name: 'Login',
   layout: 'auth',
   components: {
-    'app-card-with-form': AppCardWithForm
+    'app-card-with-form': AppCardWithForm,
+    'app-text-field-email-required': AppTextFieldEmailRequired
   },
   data () {
     return {
@@ -68,6 +63,7 @@ export default {
         this.loading = false
       }).catch((error) => {
         this.$snackbar.showError(error)
+        this.loading = false
       })
     }
   }

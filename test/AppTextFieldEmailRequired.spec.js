@@ -2,29 +2,30 @@ import { mount } from '@vue/test-utils'
 import Vuetify from 'vuetify'
 import Vuelidate from 'vuelidate'
 import Vue from 'vue'
-import AppTextFieldRequired from '../components/AppTextFieldRequired.vue'
+import AppTextFieldEmailRequired from '../components/AppTextFieldEmailRequired.vue'
 
 Vue.use(Vuetify)
 Vue.use(Vuelidate)
-describe('AppTextFieldRequired', () => {
+
+describe('AppTextFieldEmailRequired', () => {
   let opts
 
   const build = (options) => {
     options = options || opts
-    const wrapper = mount(AppTextFieldRequired, options)
+    const wrapper = mount(AppTextFieldEmailRequired, options)
     return {
       wrapper,
-      inputField: () => wrapper.find('[data-test=text_field_required]')
+      inputField: () => wrapper.find('[data-test=email_field_required]')
     }
   }
 
   beforeEach(() => {
     opts = {
-      sync: false, // avoid inconsistent errors with vuelidate https://github.com/vuelidate/vuelidate/issues/521
+      // sync: false, // avoid inconsistent errors with vuelidate https://github.com/vuelidate/vuelidate/issues/521
       propsData: {
-        label: 'Nom',
-        name: 'name',
-        value: ''
+        value: '',
+        label: 'Correu electrònic',
+        name: 'email'
       }
     }
   })
@@ -39,33 +40,43 @@ describe('AppTextFieldRequired', () => {
     expect(wrapper.element).toMatchSnapshot()
   })
 
-  test('emits input when typing on input field', () => {
+  test('emits input when typing on input field', async () => {
     const { wrapper, inputField } = build()
+
     inputField().element.value = 'a'
     inputField().trigger('input')
+
+    await wrapper.vm.$nextTick() // <- over here
+
+    console.log(wrapper.text())
 
     expect(wrapper.emitted().input).toBeTruthy()
     expect(wrapper.emitted().input.length).toBe(1)
     expect(wrapper.emitted().input[0][0]).toEqual('a')
   })
 
-  test('show error when field is empty with input', async () => {
+  test.skip('show error when field email is and invalid email', async () => {
     const { wrapper, inputField } = build()
-    inputField().element.value = ''
+
+    inputField().element.value = 'invalidemailgmail.com'
     inputField().trigger('input')
 
     await Vue.nextTick()
 
-    expect(wrapper.text()).toMatch('El camp name és obligatori')
+    console.log(wrapper.text())
+
+    expect(wrapper.text()).toMatch('El camp email ha de ser un email vàlid')
   })
 
-  test.skip('show error when field is empty with input', async () => {
+  test('Do not show errosr when field email is valid', async () => {
     const { wrapper, inputField } = build()
-    inputField().element.value = ''
+
+    inputField().element.value = 'pepe@pardo.com'
     inputField().trigger('input')
 
     await Vue.nextTick()
 
-    expect(wrapper.text()).toMatch('El camp name és obligatori')
+    console.log(wrapper.text())
+    expect(wrapper.text()).toMatch('El camp email és obligatori')
   })
 })

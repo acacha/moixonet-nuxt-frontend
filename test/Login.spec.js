@@ -2,12 +2,15 @@ import { shallowMount, mount } from '@vue/test-utils'
 import Vuetify from 'vuetify'
 import Vue from 'vue'
 import flushPromises from 'flush-promises'
+import Vuelidate from 'vuelidate'
 import Login from '../pages/Login'
+import AppTextFieldEmailRequired from '../components/AppTextFieldEmailRequired'
 import snackbar from '../plugins/snackbar'
 jest.mock('../plugins/snackbar.js')
 
 Vue.use(Vuetify)
 Vue.use(snackbar)
+Vue.use(Vuelidate)
 
 describe('Login', () => {
   let opts
@@ -28,7 +31,7 @@ describe('Login', () => {
       wrapper,
       wrapperShallow,
       loginButton: () => wrapper.find('[data-test=auth_login_button_login]'),
-      emailInputField: () => wrapper.find('[data-test=auth_login_input_email]'),
+      emailInputField: () => wrapper.find(AppTextFieldEmailRequired),
       passwordInputField: () => wrapper.find('[data-test=auth_login_input_password]')
     }
   }
@@ -62,8 +65,8 @@ describe('Login', () => {
 
   test('can login', () => {
     const { loginButton, emailInputField, passwordInputField } = build()
-    emailInputField().element.value = 'sergiturbadenas@gmail.com'
-    emailInputField().trigger('input')
+    emailInputField().vm.$emit('input', 'sergiturbadenas@gmail.com')
+
     passwordInputField().element.value = '12345678'
     passwordInputField().trigger('input')
     loginButton().trigger('click')
