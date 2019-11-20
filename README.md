@@ -1,3 +1,26 @@
+# GUIA 21 novembre
+- Repàs últim dia:
+  - Pàgina login: mostrar missatges snackbar quan login correcte i login incorrecte
+  - Event Bus: creació d'un plugin i exemple ús event bus
+  - Snackbar:
+    - Creació component dummy (Appsnackbar) i els seus testos
+    - AppSnackbar s'utilitza als layouts: component aporta inteligència: connexió amb Event bus per mostrar snackbar
+    - Creació d'un plugin per injectar this.$snackbar i facilitar l'ús snackbar
+
+TRAITS/MIXINS
+Reutilitzar codi:
+- Utilitzar per evitar codi web registre snackbar a layouts: auth i default
+  - Nom mixin: HasSnackbar mou el codi de mounted i la funció de register del listers
+
+- Vue 3
+EXTENDS    
+
+TEST PÀGINA LOGIN:
+
+COMPONENTS DIALOG:
+- Dos dialogs similar amb codi wet
+- refactor to dry with composition: https://learn.adamwathan.com/advanced-vue/extending-components-using-composition
+
 # GUIA 18 novembre
 
 - Vuetify: Video vuemastery: https://vuetifyjs.com/en/

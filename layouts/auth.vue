@@ -25,28 +25,13 @@
 
 <script>
 import AppSnackbar from '../components/AppSnackbar'
-
+import { HasSnackbar } from '../mixins/HasSnackbar'
 export default {
   name: 'Auth',
   components: {
     'app-snackbar': AppSnackbar
   },
-  data () {
-    return {
-      snackbar: false,
-      message: 'HOLA QUE TAL!',
-      color: 'error'
-    }
-  },
-  mounted () {
-    this.$eventBus.$on('showSnackbar', (message, color) => {
-      message = message || 'Put your message here'
-      color = color || 'success'
-      this.snackbar = true
-      this.message = message
-      this.color = color
-    })
-  }
+  mixins: [ HasSnackbar ]
 }
 </script>
 
