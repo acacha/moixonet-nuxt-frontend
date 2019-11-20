@@ -75,7 +75,8 @@ Exemple ús:
 https://codepen.io/paulpv/pen/qoKoKV  
 ```
 
-
+- Exemple fet camp email formulari LOGIN
+- Fer input field password a mida
 
 Components:
  
