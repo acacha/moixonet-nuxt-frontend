@@ -77,6 +77,7 @@ https://codepen.io/paulpv/pen/qoKoKV
 
 - Exemple fet camp email formulari LOGIN
 - Fer input field password a mida
+- No poder enviar (boto enviar disabled) formulari de login si les dades no són vàlides
 
 Components:
  
