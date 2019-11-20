@@ -8,15 +8,45 @@
     - Creació d'un plugin per injectar this.$snackbar i facilitar l'ús snackbar
 
 TRAITS/MIXINS
+
 Reutilitzar codi:
 - Utilitzar per evitar codi web registre snackbar a layouts: auth i default
   - Nom mixin: HasSnackbar mou el codi de mounted i la funció de register del listers
 
 - Vue 3
+
 EXTENDS    
 
 TEST PÀGINA LOGIN:
 
+- Copiar test del exemple professor: test
+- Explicació stubs, spies i similars per provar els components de forma isolada: sense executar serveis de tercers, plugins, peticions axios, etc.
+  - Vuetify:
+    - Mocking de vuetify (serveis/plugins interns Vuetify) per evitar errors.
+  - Nuxt:
+    - Stub de nuxt-link (a projectes Vue seria stub de vue-router)
+  - Serveis externs/plugins pàgina login:
+    - $auth
+    - $snackbar    
+  - Stubs de funcions simples:jest.fn()
+  - Stubs de promeses: jest.fn().mockImplementation(() => Promise.resolve())
+  
+Detalls UI
+- Component UI
+ - Email field: compositions de 
+   - required
+   - email
+ - Username field
+   - required
+ - Per a passwords:
+  - Password input afegir icona ull permeti mostrar o no paraula de pas
+  - Comptador de caràcters
+  - https://vuetifyjs.com/en/components/text-fields#password-input
+  - Per composició crear component que sigui conjunt de dos camps password i password confirmation
+  
+TEST E2E LOGIN amb Cypress | VUELIDATE:
+- Falta mostrar missatges validació
+  
 COMPONENTS DIALOG:
 - Dos dialogs similar amb codi wet
 - refactor to dry with composition: https://learn.adamwathan.com/advanced-vue/extending-components-using-composition

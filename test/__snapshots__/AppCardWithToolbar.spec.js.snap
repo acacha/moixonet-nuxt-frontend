@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CardWithToolbar renders the component 1`] = `
+<v-card
+  class="elevation-12"
+>
+  <v-toolbar
+    color="primary"
+    dark=""
+    flat=""
+  >
+    <v-toolbar-title
+      data-test="auth_login_card_title"
+    >
+      PUT YOUR TITLE HERE
+    </v-toolbar-title>
+  </v-toolbar>
+   
+  <v-card-text>
+    PUT YOUR CARD TEXT HERE
+  </v-card-text>
+   
+  <v-card-actions>
+    PUT YOUR CARD ACTIONS HERE
+  </v-card-actions>
+</v-card>
+`;

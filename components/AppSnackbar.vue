@@ -36,7 +36,7 @@ export default {
       }
     },
     message: {
-      type: String,
+      type: [ String, Object, Number ],
       default: 'Put your message here'
     }
   },

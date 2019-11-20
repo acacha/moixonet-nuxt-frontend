@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppCardWithForm renders the component with default slots 1`] = `
+<div
+  class="elevation-12 v-card v-sheet theme--light"
+>
+  <header
+    class="v-sheet v-sheet--tile theme--dark v-toolbar v-toolbar--flat primary"
+    style="height: 64px;"
+  >
+    <div
+      class="v-toolbar__content"
+      style="height: 64px;"
+    >
+      <div
+        class="v-toolbar__title"
+        data-test="card_title"
+      >
+        <div
+          class="fake-title"
+        >
+          TITLE
+        </div>
+      </div>
+    </div>
+  </header>
+   
+  <span
+    data-test="card_form"
+  >
+    <div
+      class="fake-form"
+    >
+      TITLE
+    </div>
+  </span>
+</div>
+`;
+
+exports[`AppCardWithForm renders the component with slots 1`] = `
+<div
+  class="elevation-12 v-card v-sheet theme--light"
+>
+  <header
+    class="v-sheet v-sheet--tile theme--dark v-toolbar v-toolbar--flat primary"
+    style="height: 64px;"
+  >
+    <div
+      class="v-toolbar__content"
+      style="height: 64px;"
+    >
+      <div
+        class="v-toolbar__title"
+        data-test="card_title"
+      >
+        <div
+          class="fake-title"
+        >
+          TITLE
+        </div>
+      </div>
+    </div>
+  </header>
+   
+  <span
+    data-test="card_form"
+  >
+    <div
+      class="fake-form"
+    >
+      TITLE
+    </div>
+  </span>
+</div>
+`;
