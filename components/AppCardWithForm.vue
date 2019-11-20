@@ -16,3 +16,9 @@
     </span>
   </v-card>
 </template>
+
+<script>
+export default {
+  name: 'AppCardWithForm'
+}
+</script>

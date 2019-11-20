@@ -31,6 +31,10 @@ TEST PÀGINA LOGIN:
   - Stubs de funcions simples:jest.fn()
   - Stubs de promeses: jest.fn().mockImplementation(() => Promise.resolve())
   
+EXEMPLE SLOTS:
+- Compositions
+- AppCardWithForm: Card que conté un formulari. reutilitzarem sovint per exemple per pàgina Register similar a pàgina login  
+  
 Detalls UI
 - Component UI
  - Email field: compositions de 
