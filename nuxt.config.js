@@ -31,7 +31,8 @@ export default {
   */
   plugins: [
     '~/plugins/eventBus.client.js',
-    '~/plugins/snackbar.client.js'
+    '~/plugins/snackbar.client.js',
+    '~/plugins/vuelidate.js'
   ],
   /*
   ** Nuxt.js dev-modules

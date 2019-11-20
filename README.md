@@ -50,6 +50,34 @@ Detalls UI
   
 TEST E2E LOGIN amb Cypress | VUELIDATE:
 - Falta mostrar missatges validació
+- Paquet a utilitzar: vuelidate https://vuelidate.js.org
+
+``` 
+npm install vuelidate --save
+``` 
+
+**plugins/vuelidate.js**:
+
+```
+import Vue from 'vue'
+import Vuelidate from 'vuelidate'
+Vue.use(Vuelidate)
+```
+File **nuxt.config.js**:
+
+plugins: [
+     '~/plugins/Vuelidate'
+  ]
+  
+Exemple ús:
+
+```
+https://codepen.io/paulpv/pen/qoKoKV  
+```
+
+Components:
+ 
+- app-text-field-required
   
 COMPONENTS DIALOG:
 - Dos dialogs similar amb codi wet
