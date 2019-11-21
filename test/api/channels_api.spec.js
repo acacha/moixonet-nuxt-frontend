@@ -10,7 +10,7 @@ describe('channels_api', () => {
   it('store a channel', async () => {
     const channel = channelsFixture[0]
 
-    const request = nock(process.env.LARAVEL_ENDPOINT)
+    const request = nock(process.env.VUE_APP_LARAVEL_ENDPOINT)
       .post('/api/v1/channels/', channel)
       .reply(201)
 
@@ -26,7 +26,7 @@ describe('channels_api', () => {
   it('destroy a channel', async () => {
     const channel = channelsFixture[0]
 
-    const request = nock(process.env.LARAVEL_ENDPOINT)
+    const request = nock(process.env.VUE_APP_LARAVEL_ENDPOINT)
       .delete('/api/v1/channels/' + channel.id)
       .reply(200)
 
@@ -41,7 +41,7 @@ describe('channels_api', () => {
   it('updates a channel', async () => {
     const channel = channelsFixture[0]
 
-    const request = nock(process.env.LARAVEL_ENDPOINT)
+    const request = nock(process.env.VUE_APP_LARAVEL_ENDPOINT)
       .put('/api/v1/channels/' + channel.id, channel)
       .reply(200)
 

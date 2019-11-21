@@ -1,11 +1,8 @@
 import axios from 'axios'
 import httpAdapter from 'axios/lib/adapters/http'
-import dotenv from 'dotenv'
-
-dotenv.config()
 
 const instance = axios.create({
-  baseURL: process.env.LARAVEL_ENDPOINT,
+  baseURL: process.env.VUE_APP_LARAVEL_ENDPOINT,
   adapter: httpAdapter
 })
 

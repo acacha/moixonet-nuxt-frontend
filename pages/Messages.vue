@@ -1,20 +1,20 @@
 <template>
   <div>
-    <app-messages :messages="messages" />
+    <!--    <app-messages :messages="messages" />-->
   </div>
 </template>
 
 <script>
 // import axios from 'axios'
 import messagesFixture from '../cypress/fixtures/messages'
-import AppMessages from '../components/AppMessages'
+// import AppMessages from '../components/AppMessages'
 
 export default {
   // middleware: ['auth'],
   name: 'Messages',
-  components: {
-    'app-messages': AppMessages
-  },
+  // components: {
+  //   'app-messages': AppMessages
+  // },
   data () {
     return {
       // FIXTURES

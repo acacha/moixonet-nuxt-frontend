@@ -12,6 +12,9 @@
   - Actions: dispatch, maActions https://vuex.vuejs.org/guide/actions.html
   - Modules: Prefix/namespace per a tenir l'store repartida: https://vuex.vuejs.org/guide/modules.html
   - Using computed setter/getter amb v-model: https://vuex.vuejs.org/guide/forms.html#two-way-computed-property    
+
+DOTENV:
+- Vue: https://cli.vuejs.org/guide/mode-and-env.html#using-env-variables-in-client-side-code
   
 TDD:
 - https://medium.com/magnetis-backstage/working-an-application-in-vue-js-with-tdd-an-extensive-guide-for-people-who-have-time-part-3-7a68ad3f5fb1
@@ -40,7 +43,7 @@ TDD:
   - Crear api_channels.spec.js
   - npm install --save-dev nock
   - Utilitzar environment per establir la URL de la API    
-  -     console.log(process.env) console.log(process.env.LARAVEL_ENDPOINT)
+  -     console.log(process.env) console.log(process.env.VUE_APP_LARAVEL_ENDPOINT)
 
 # GUIA 21 novembre
 - Repàs últim dia:
@@ -142,8 +145,8 @@ COMPONENTS DIALOG:
   - Configuració URLS API BACKEND per local i producció
   - Mòdul auth nuxt: this.$auth.loginWith()
     - Configuració al fitxer **nuxt.config.js**:  
-      - process.env.LARAVEL_PASSPORT_ENDPOINT: http://moixonet-backend.test/
-      - process.env.LARAVEL_ENDPOINT: http://moixonet-backend.test/
+      - process.env.VUE_APP_LARAVEL_PASSPORT_ENDPOINT: http://moixonet-backend.test/
+      - process.env.VUE_APP_LARAVEL_ENDPOINT: http://moixonet-backend.test/
 - Com veure les rutes de nuxt:
   - **.nuxt/router.js**
 - TESTOS:
