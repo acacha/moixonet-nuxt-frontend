@@ -1,10 +1,4 @@
-import axios from 'axios'
-import httpAdapter from 'axios/lib/adapters/http'
-
-const instance = axios.create({
-  baseURL: process.env.VUE_APP_LARAVEL_ENDPOINT,
-  adapter: httpAdapter
-})
+import instance from './apiClient'
 
 export default {
   index () {

@@ -13,8 +13,27 @@
   - Modules: Prefix/namespace per a tenir l'store repartida: https://vuex.vuejs.org/guide/modules.html
   - Using computed setter/getter amb v-model: https://vuex.vuejs.org/guide/forms.html#two-way-computed-property    
 
+NUXT AXIOS:
+- https://axios.nuxtjs.org/
+  - $axios.$get
+  - Store actions: this.$axios.$get
+  - nuxtServerInit: https://nuxtjs.org/guide/vuex-store/#the-nuxtserverinit-action
+- Complica els tests, cal preparar la api per poder injectar/canviar el client:
+  - Als testos unitaris el client serà un axios normal (no cal autenticació pq de fet utilitzem nock i el api endpoint no s'executa realment mai)
+  - Crear un plugin **plugins/api.js** que defineixi que el client és el mòdul axios de nuxt ($nuxt)
+
+```  
+import { setClient } from '../api/apiClient'
+
+export default ({ app, store }) => {
+  setClient(app.$axios)
+}
+```
+
 DOTENV:
 - Vue: https://cli.vuejs.org/guide/mode-and-env.html#using-env-variables-in-client-side-code
+- NUXT: https://nuxtjs.org/api/configuration-env/
+- Dotenv
   
 TDD:
 - https://medium.com/magnetis-backstage/working-an-application-in-vue-js-with-tdd-an-extensive-guide-for-people-who-have-time-part-3-7a68ad3f5fb1
