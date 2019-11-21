@@ -25,10 +25,10 @@ const actions = {
       }
     })
   },
-  [actionTypes.CHANNELS_INDEX] ({ commit }, channel) {
+  [actionTypes.CHANNELS_INDEX] ({ commit }) {
     return new Promise(async (resolve, reject) => {
       try {
-        const channels = await api.index(channel)
+        const channels = await api.index()
         commit(mutationTypes.CHANNELS_INDEX, channels)
         resolve(channels)
       } catch (error) {

@@ -1,9 +1,12 @@
 import flushPromises from 'flush-promises'
+import axios from 'axios'
+import httpAdapter from 'axios/lib/adapters/http'
 import * as actionTypes from '../../../store/action-types'
 import * as mutationTypes from '../../../store/mutation-types'
 import actions from '../../../store/channels/actions'
 import channelsFixture from '../../../cypress/fixtures/channels'
 import api from '../../../api/channels'
+import { setClient } from '../../../api/apiClient'
 jest.mock('../../../api/channels')
 
 describe('channels actions', () => {
@@ -11,6 +14,11 @@ describe('channels actions', () => {
 
   beforeEach(() => {
     commit = jest.fn()
+    const instance = axios.create({
+      baseURL: process.env.VUE_APP_LARAVEL_ENDPOINT,
+      adapter: httpAdapter
+    })
+    setClient(instance)
   })
 
   it('adds a channel', async () => {
@@ -31,9 +39,9 @@ describe('channels actions', () => {
 
   it('get channels', async () => {
     const channels = channelsFixture
-    await actions[actionTypes.CHANNELS_INDEX]({ commit }, channels)
+    await actions[actionTypes.CHANNELS_INDEX]({ commit })
     await flushPromises()
-    expect(api.index).toHaveBeenCalledWith(channels)
+    expect(api.index).toHaveBeenCalled()
     expect(commit).toHaveBeenCalledWith(mutationTypes.CHANNELS_INDEX, channels)
   })
 
