@@ -59,4 +59,17 @@ describe('channels_api', () => {
     expect(result.status).toEqual(200)
     expect(request.isDone()).toBe(true)
   })
+
+  it('gets channel', async () => {
+    const request = nock(process.env.VUE_APP_LARAVEL_ENDPOINT)
+      .get('/api/v1/channels/')
+      .reply(200)
+
+    // act
+    const result = await api.index()
+    await flushPromises()
+
+    expect(result.status).toEqual(200)
+    expect(request.isDone()).toBe(true)
+  })
 })
