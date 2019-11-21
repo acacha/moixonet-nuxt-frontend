@@ -3,7 +3,7 @@ import ChannelsList from '../components/ChannelsList'
 import AppChannelsList from '../components/AppChannelsList'
 import initialState from '../store/channels/state'
 import channelsFixture from '../cypress/fixtures/channels'
-import * as actionTypes from '../store/action-types'
+import * as actionTypes from '../action-types'
 
 describe('ChannelsList', () => {
   let opts

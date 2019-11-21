@@ -35,8 +35,8 @@ export default {
         return ['success', 'warning', 'error'].includes(value)
       }
     },
+    // eslint-disable-next-line vue/require-prop-types
     message: {
-      type: [ String, Object, Number ],
       default: 'Put your message here'
     }
   },

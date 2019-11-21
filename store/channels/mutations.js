@@ -1,4 +1,4 @@
-import * as mutationTypes from '../mutation-types'
+import * as mutationTypes from '../../mutation-types'
 
 const mutations = {
   [mutationTypes.CHANNELS_INDEX] (state, channels) {

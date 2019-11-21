@@ -1,5 +1,5 @@
 import mutations from '../../../store/channels/mutations'
-import * as mutationTypes from '../../../store/mutation-types'
+import * as mutationTypes from '../../../mutation-types'
 import initialState from '../../../store/channels/state'
 import channelsFixture from '../../../cypress/fixtures/channels'
 

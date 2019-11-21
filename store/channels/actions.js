@@ -1,6 +1,6 @@
-import * as actionTypes from '../action-types'
+import * as actionTypes from '../../action-types'
 import api from '../../api/channels'
-import * as mutationTypes from '../mutation-types'
+import * as mutationTypes from '../../mutation-types'
 
 const actions = {
   [actionTypes.CHANNEL_STORE] ({ commit }, channel) {

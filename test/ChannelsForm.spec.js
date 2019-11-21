@@ -2,7 +2,7 @@ import { shallowMount } from '@vue/test-utils'
 import ChannelsForm from '../components/ChannelsForm'
 import AppChannelsForm from '../components/AppChannelsForm'
 import channelsFixture from '../cypress/fixtures/channels'
-import * as actionTypes from '../store/action-types'
+import * as actionTypes from '../action-types'
 
 describe('ChannelsForm', () => {
   let opts

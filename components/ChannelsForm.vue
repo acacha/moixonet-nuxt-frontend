@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import * as actionTypes from '../store/action-types'
+import * as actionTypes from '../action-types'
 import AppChannelsForm from './AppChannelsForm'
 
 export default {

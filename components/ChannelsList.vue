@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import * as actionTypes from '../store/action-types'
+import * as actionTypes from '../action-types'
 import AppChannelsList from './AppChannelsList'
 
 export default {
