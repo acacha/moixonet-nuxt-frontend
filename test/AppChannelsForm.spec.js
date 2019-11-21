@@ -43,7 +43,7 @@ describe('AppChannelsForm', () => {
 
     expect(wrapper.emitted().added).toBeTruthy()
     expect(wrapper.emitted().added.length).toBe(1)
-    expect(wrapper.emitted().added[0][0]).toEqual('New channel')
+    expect(wrapper.emitted().added[0][0]).toEqual({ name: 'New channel' })
   })
 
   test.skip('Can add channel with enter', () => {

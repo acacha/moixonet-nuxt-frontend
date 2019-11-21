@@ -34,7 +34,8 @@ export default {
   plugins: [
     '~/plugins/eventBus.client.js',
     '~/plugins/snackbar.client.js',
-    '~/plugins/vuelidate.js'
+    '~/plugins/vuelidate.js',
+    '~/plugins/api.js'
   ],
   /*
   ** Nuxt.js dev-modules
@@ -58,7 +59,7 @@ export default {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
-
+    baseURL: process.env.VUE_APP_LARAVEL_ENDPOINT
   },
   /*
   ** Build configuration

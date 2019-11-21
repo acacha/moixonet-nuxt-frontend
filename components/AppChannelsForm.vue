@@ -25,7 +25,7 @@ export default {
   methods: {
     add () {
       if (this.name === '') { this.showError('El nom és obligatori') }
-      this.$emit('added', this.name)
+      this.$emit('added', { name: this.name })
       this.name = ''
     },
     showError (error) {
