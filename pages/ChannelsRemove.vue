@@ -15,6 +15,23 @@ export default {
   components: {
     'channels-list': ChannelsList,
     'channels-form': ChannelsForm
+  },
+  computed: {
+    channels () {
+      return this.$store.state.channels.list
+    }
+  },
+  methods: {
+    // operació sobre un element d'estat -> commit a Vuex
+    add (name) {
+      this.channels.push({
+        id: 5,
+        name
+      })
+    },
+    remove (channel) {
+      this.channels.splice(this.channels.indexOf(channel), 1)
+    }
   }
 }
 </script>

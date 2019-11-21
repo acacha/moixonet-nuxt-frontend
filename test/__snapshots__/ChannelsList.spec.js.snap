@@ -1,39 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AppChannelsList renders a list of channels 1`] = `
-<ul>
-  <li>
-    
-    Canal 1 
-    <button
-      data-test="remove-button"
-    >
-      
-  Eliminar
+exports[`ChannelsList renders the component channels 1`] = `
+<app-channels-list-stub
+  channels="[object Object],[object Object],[object Object]"
+/>
+`;
 
-    </button>
-  </li>
-  <li>
-    
-    Canal 2 
-    <button
-      data-test="remove-button"
-    >
-      
-  Eliminar
-
-    </button>
-  </li>
-  <li>
-    
-    Canal 3 
-    <button
-      data-test="remove-button"
-    >
-      
-  Eliminar
-
-    </button>
-  </li>
-</ul>
+exports[`ChannelsList renders the component with no channels 1`] = `
+<app-channels-list-stub
+  channels=""
+/>
 `;

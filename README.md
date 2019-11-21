@@ -1,3 +1,44 @@
+# VUEX
+
+- Esquema com funciona: https://vuex.vuejs.org/vuex.png
+- NUXT: https://nuxtjs.org/guide/vuex-store/
+  - Obliga a treballar amb mòdules
+  - Cada fitxer és un mòdul
+- Mètodes: 
+  - Estat: mapState i spreadOperator: https://vuex.vuejs.org/guide/state.html
+  - Getters: mapGetters https://vuex.vuejs.org/guide/getters.html
+  - Mutations: commit, mapMutations https://vuex.vuejs.org/guide/mutations.html
+    - ús de constants: https://vuex.vuejs.org/guide/mutations.html#using-constants-for-mutation-types
+  - Actions: dispatch, maActions https://vuex.vuejs.org/guide/actions.html
+  - Modules: Prefix/namespace per a tenir l'store repartida: https://vuex.vuejs.org/guide/modules.html
+  - Using computed setter/getter amb v-model: https://vuex.vuejs.org/guide/forms.html#two-way-computed-property    
+  
+TDD:
+- https://medium.com/magnetis-backstage/working-an-application-in-vue-js-with-tdd-an-extensive-guide-for-people-who-have-time-part-3-7a68ad3f5fb1
+- Mòduls:
+  - channels.js
+  - messages.js
+- Fixtures:
+  - channels
+- Component intel.ligent Channels (channels.spec.js):
+  - Incorporar Store i initial state al test
+    - Canviar a Channels.vue l'estat local ( apartat data) channels per els channels de l'store
+    - Refactoritzar Channels.spec.js: 
+      - Pàgina channel es converteix en un pàgina dumb que només conté layout de subpàgines inteligents:
+        - <channels-form></channels-form>
+        - <channels-list></channels-list>   
+  - ACTIONS:
+    - CHANNEL_ADD
+    - CHANNEL_REMOVE
+    - TODO: edit
+- API TESTING
+  - https://medium.com/magnetis-backstage/working-an-application-in-vue-js-with-tdd-an-extensive-guide-for-people-who-have-time-part-4-700a4269e368
+  - Crear carpeta api a tests
+  - Crear api_channels.spec.js
+  - npm install --save-dev nock
+  - Utilitzar environment per establir la URL de la API    
+  -     console.log(process.env) console.log(process.env.LARAVEL_ENDPOINT)
+
 # GUIA 21 novembre
 - Repàs últim dia:
   - Pàgina login: mostrar missatges snackbar quan login correcte i login incorrecte
