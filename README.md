@@ -28,8 +28,11 @@ TDD:
         - <channels-form></channels-form>
         - <channels-list></channels-list>   
   - ACTIONS:
-    - CHANNEL_ADD
-    - CHANNEL_REMOVE
+    - CHANNEL_STORE
+    - CHANNEL_DESTROY
+    - CHANNEL_UPDATE
+    - CHANNEL_INDEX
+    - CHANNEL_SHOW
     - TODO: edit
 - API TESTING
   - https://medium.com/magnetis-backstage/working-an-application-in-vue-js-with-tdd-an-extensive-guide-for-people-who-have-time-part-4-700a4269e368

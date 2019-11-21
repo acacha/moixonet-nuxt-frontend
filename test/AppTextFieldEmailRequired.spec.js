@@ -61,8 +61,6 @@ describe('AppTextFieldEmailRequired', () => {
 
     await Vue.nextTick()
 
-    console.log(wrapper.text())
-
     expect(wrapper.text()).toMatch('El camp email ha de ser un email vàlid')
   })
 
@@ -74,7 +72,7 @@ describe('AppTextFieldEmailRequired', () => {
 
     await Vue.nextTick()
 
-    console.log(wrapper.text())
+    // console.log(wrapper.text())
     expect(wrapper.text()).toMatch('El camp email és obligatori')
   })
 })

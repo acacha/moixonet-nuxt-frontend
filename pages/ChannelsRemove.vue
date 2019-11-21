@@ -1,7 +1,7 @@
 <template>
   <span>
-    <channels-form></channels-form>
-    <channels-list></channels-list>
+    <channels-form />
+    <channels-list />
   </span>
 </template>
 

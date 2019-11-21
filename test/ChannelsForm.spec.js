@@ -56,7 +56,7 @@ describe('ChannelsForm', () => {
     channelsForm().vm.$emit('added', addedChannel)
 
     expect(actions).toHaveBeenCalled()
-    expect(actions.mock.calls[0][0]).toEqual(actionTypes.CHANNEL_ADD)
+    expect(actions.mock.calls[0][0]).toEqual(actionTypes.CHANNEL_STORE)
     expect(actions.mock.calls[0][1]).toEqual(addedChannel)
   })
 })

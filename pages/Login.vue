@@ -6,7 +6,7 @@
     <template v-slot:form>
       <v-card-text>
         <v-form>
-          <app-text-field-email-required v-model="email" name="email" label="Correu electrònic"/>
+          <app-text-field-email-required v-model="email" name="email" label="Correu electrònic" />
 
           <v-text-field
             id="password"

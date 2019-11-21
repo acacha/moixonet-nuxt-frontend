@@ -76,7 +76,7 @@ describe('ChannelsList', () => {
     channelsList().vm.$emit('removed', removedChannel)
 
     expect(actions).toHaveBeenCalled()
-    expect(actions.mock.calls[0][0]).toEqual(actionTypes.CHANNEL_REMOVE)
+    expect(actions.mock.calls[0][0]).toEqual(actionTypes.CHANNEL_DESTROY)
     expect(actions.mock.calls[0][1]).toEqual(removedChannel)
   })
 })

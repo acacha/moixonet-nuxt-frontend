@@ -13,7 +13,7 @@ export default {
   },
   methods: {
     add (channel) {
-      this.$store.dispatch(actionTypes.CHANNEL_ADD, channel)
+      this.$store.dispatch(actionTypes.CHANNEL_STORE, channel)
     }
   }
 }

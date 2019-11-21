@@ -10,14 +10,24 @@ const instance = axios.create({
 })
 
 export default {
-  add (channel) {
+  index () {
     return instance
-      .post(`/api/v1/channels/`, channel)
+      .get('/api/v1/channels/')
       .then(result => result)
   },
-  remove (channel) {
+  store (channel) {
     return instance
-      .get(`/users/${channel}`)
-      .then(result => result.data)
+      .post('/api/v1/channels/', channel)
+      .then(result => result)
+  },
+  destroy (channel) {
+    return instance
+      .delete('/api/v1/channels/' + channel.id)
+      .then(result => result)
+  },
+  update (channel) {
+    return instance
+      .put('/api/v1/channels/' + channel.id, channel)
+      .then(result => result)
   }
 }

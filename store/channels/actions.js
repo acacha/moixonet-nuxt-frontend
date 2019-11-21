@@ -3,22 +3,44 @@ import api from '../../api/channels'
 import * as mutationTypes from '../mutation-types'
 
 const actions = {
-  [actionTypes.CHANNEL_ADD] ({ commit }, channel) {
+  [actionTypes.CHANNEL_STORE] ({ commit }, channel) {
     return new Promise(async (resolve, reject) => {
       try {
-        await api.add(channel)
-        commit(mutationTypes.CHANNEL_ADD, channel)
+        await api.store(channel)
+        commit(mutationTypes.CHANNEL_STORE, channel)
         resolve()
       } catch (error) {
         reject(error)
       }
     })
   },
-  [actionTypes.CHANNEL_REMOVE] ({ commit }, channel) {
+  [actionTypes.CHANNEL_DESTROY] ({ commit }, channel) {
     return new Promise(async (resolve, reject) => {
       try {
-        await api.remove(channel)
-        commit(mutationTypes.CHANNEL_REMOVE, channel)
+        await api.destroy(channel)
+        commit(mutationTypes.CHANNEL_DESTROY, channel)
+        resolve()
+      } catch (error) {
+        reject(error)
+      }
+    })
+  },
+  [actionTypes.CHANNELS_INDEX] ({ commit }, channel) {
+    return new Promise(async (resolve, reject) => {
+      try {
+        const channels = await api.index(channel)
+        commit(mutationTypes.CHANNELS_INDEX, channels)
+        resolve(channels)
+      } catch (error) {
+        reject(error)
+      }
+    })
+  },
+  [actionTypes.CHANNEL_UPDATE] ({ commit }, channel) {
+    return new Promise(async (resolve, reject) => {
+      try {
+        await api.update(channel)
+        commit(mutationTypes.CHANNEL_UPDATE, channel)
         resolve()
       } catch (error) {
         reject(error)

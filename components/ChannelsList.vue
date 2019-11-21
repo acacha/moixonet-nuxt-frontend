@@ -18,7 +18,7 @@ export default {
   },
   methods: {
     remove (channel) {
-      this.$store.dispatch(actionTypes.CHANNEL_REMOVE, channel)
+      this.$store.dispatch(actionTypes.CHANNEL_DESTROY, channel)
     }
   }
 }
