@@ -38,7 +38,7 @@
         Recordar paraula de pas
       </nuxt-link>
       <v-spacer />
-      <v-btn color="primary" data-test="auth_login_button_login" :loading="loading" @click="login">
+      <v-btn :loading="loading" @click="login" color="primary" data-test="auth_login_button_login">
         Entrar
       </v-btn>
     </v-card-actions>
@@ -66,12 +66,13 @@ export default {
         }
       }).then(() => {
         this.loading = false
+        this.$snackbar.showMessage('Login correcte')
+      }).catch((error) => {
+        this.loading = false
+        // this.$eventBus.$emit('showSnackbar', error, 'error')
+        this.$snackbar.showError(error)
       })
     }
   }
 }
 </script>
-
-<style scoped>
-
-</style>

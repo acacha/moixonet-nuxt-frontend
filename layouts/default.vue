@@ -31,8 +31,8 @@
           <v-list-item
             v-else
             :key="i"
-            link
             :to="item.to"
+            link
             nuxt
           >
             <v-list-item-action>
@@ -67,6 +67,7 @@
     />
 
     <v-content>
+      <app-snackbar v-model="snackbar" :message="message" :color="color" />
       <nuxt />
     </v-content>
 
@@ -108,8 +109,15 @@
 </template>
 
 <script>
+import { HasSnackbar } from '../mixins/HasSnackbar'
+import AppSnackbar from '../components/AppSnackbar'
+
 export default {
   name: 'Default',
+  components: {
+    'app-snackbar': AppSnackbar
+  },
+  mixins: [HasSnackbar],
   data: () => ({
     drawer: false,
     drawerRight: false,

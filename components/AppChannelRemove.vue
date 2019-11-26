@@ -1,5 +1,5 @@
 <template>
-  <button data-test="remove-button" @click="remove">
+  <button @click="remove" data-test="remove-button">
     Eliminar
   </button>
 </template>

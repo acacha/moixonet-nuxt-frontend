@@ -2,20 +2,20 @@
   <div>
     <form>
       Name: <input v-model="newChannel" data-test="new_channel" type="text" placeholder="Introduïu un nom">
-      <button data-test="add_button" @click.prevent="add">
+      <button @click.prevent="add" data-test="add_button">
         Afegir
       </button>
     </form>
     <ul>
       <li v-for="channel in filteredChannels" :key="channel.id">
-        <input type="checkbox" :checked="channel.active" @click="toggle(channel)">
+        <input :checked="channel.active" @click="toggle(channel)" type="checkbox">
         <input
           v-if="editing === channel.id"
           v-model="newValue"
-          type="text"
           :data-test="'new_value_' + channel.id"
           @keyup.enter="update(channel)"
           @blur="update(channel)"
+          type="text"
         >
         <span v-else>{{ channel.name }}</span>
         <button :data-test="'delete_button_' + channel.id" @click="remove(channel)">
@@ -28,9 +28,9 @@
     </ul>
     Total: {{ total }}
     <ul>
-      <li><a href="#" @click="filter='all'">All</a></li>
-      <li><a href="#" @click="filter='active'">Active</a></li>
-      <li><a href="#" @click="filter='disabled'">Disable</a></li>
+      <li><a @click="filter='all'" href="#">All</a></li>
+      <li><a @click="filter='active'" href="#">Active</a></li>
+      <li><a @click="filter='disabled'" href="#">Disable</a></li>
     </ul>
   </div>
 </template>

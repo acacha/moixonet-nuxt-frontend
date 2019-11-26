@@ -1,5 +1,7 @@
 import colors from 'vuetify/es5/util/colors'
-require('dotenv').config()
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 export default {
   mode: 'universal',
@@ -30,6 +32,9 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '~/plugins/eventBus.client.js',
+    '~/plugins/snackbar.client.js',
+    '~/plugins/api.js'
   ],
   /*
   ** Nuxt.js dev-modules
@@ -53,6 +58,7 @@ export default {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
+    baseURL: process.env.LARAVEL_ENDPOINT
   },
   /*
   ** Build configuration

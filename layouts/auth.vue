@@ -1,6 +1,7 @@
 <template>
   <v-app id="inspire">
     <v-content>
+      <app-snackbar v-model="snackbar" :message="message" :color="color" />
       <v-container
         class="fill-height"
         fluid
@@ -21,6 +22,19 @@
     </v-content>
   </v-app>
 </template>
+
+<script>
+import AppSnackbar from '../components/AppSnackbar'
+import { HasSnackbar } from '../mixins/HasSnackbar'
+
+export default {
+  name: 'Auth',
+  components: {
+    'app-snackbar': AppSnackbar
+  },
+  mixins: [HasSnackbar]
+}
+</script>
 
 <style>
 html {

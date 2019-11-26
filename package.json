@@ -11,12 +11,14 @@
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "lint-fix": "eslint --fix --ext .js,.vue --ignore-path .gitignore .",
+    "lintfix": "eslint --fix --ext .js,.vue --ignore-path .gitignore .",
     "test": "jest test",
     "test:watch": "jest --watchAll test",
     "test:e2e": "cypress open",
     "test:e2e:silent": "cypress",
     "precommit": "npm run lint",
-    "open": "sensible-browser http://nuxt.moixonet.acacha.scool.test:3333/"
+    "open": "sensible-browser http://nuxt.moixonet.acacha.scool.test:3333/",
+    "open-production": "sensible-browser https://TODO"
   },
   "dependencies": {
     "@nuxtjs/auth": "^4.8.4",
@@ -32,10 +34,11 @@
     "@vue/test-utils": "^1.0.0-beta.27",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^24.1.0",
-    "cypress": "^3.6.0",
+    "cypress": "^3.6.1",
     "eslint": "^6.6.0",
-    "eslint-plugin-nuxt": ">=0.4.2",
+    "eslint-plugin-nuxt": "^0.5.0",
     "jest": "^24.1.0",
+    "nock": "^11.7.0",
     "vue-jest": "^4.0.0-0"
   },
   "engines": {

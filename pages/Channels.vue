@@ -1,36 +1,19 @@
 <template>
   <span>
-    <app-channels-form @added="add" />
-    <app-channels-list :channels="channels" @removed="remove" />
+    <channels-form />
+    <channels-list />
   </span>
 </template>
 
 <script>
-import AppChannelsList from '../components/AppChannelsList'
-import AppChannelsForm from '../components/AppChannelsForm'
-import channelsFixture from '../cypress/fixtures/channels'
+import ChannelsForm from '../components/ChannelsForm.vue'
+import ChannelsList from '../components/ChannelsList.vue'
 export default {
+  middleware: ['auth'],
   name: 'Channels',
   components: {
-    'app-channels-list': AppChannelsList,
-    'app-channels-form': AppChannelsForm
-  },
-  data () {
-    return {
-      channels: channelsFixture
-    }
-  },
-  methods: {
-    // operació sobre un element d'estat -> commit a Vuex
-    add (name) {
-      this.channels.push({
-        id: 5,
-        name
-      })
-    },
-    remove (channel) {
-      this.channels.splice(this.channels.indexOf(channel), 1)
-    }
+    'channels-form': ChannelsForm,
+    'channels-list': ChannelsList
   }
 }
 </script>
