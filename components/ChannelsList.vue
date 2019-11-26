@@ -1,18 +1,35 @@
 <template>
-  <ul>
-    <li v-for="channel in channels">
-      {{ channel.name }}
-    </li>
-    <button @click="omplir">
-      Omplir
-    </button>
-    <button @click="buidar">
-      Buidar
-    </button>
-    <button @click="refresh">
-      refresh
-    </button>
-  </ul>
+  <v-container>
+    <v-card>
+      <v-toolbar dense color="primary">
+        <v-toolbar-title class="white--text">Llista de canals</v-toolbar-title>
+        <v-spacer></v-spacer>
+
+        <v-toolbar-items>
+          <v-btn text icon class="white--text" @click="refresh" :loading="loading">
+            <v-icon>mdi-cached</v-icon>
+          </v-btn>
+        </v-toolbar-items>
+
+      </v-toolbar>
+      <v-list>
+        <v-list-item v-for="channel in channels">
+          {{ channel.name }}
+        </v-list-item>
+        <v-card-actions>
+          <v-btn @click="omplir" color="primary">
+            Omplir
+          </v-btn>
+          <v-btn @click="buidar" color="error">
+            Buidar
+          </v-btn>
+          <v-btn @click="refresh">
+            refresh
+          </v-btn>
+        </v-card-actions>
+      </v-list>
+    </v-card>
+  </v-container>
 </template>
 
 <script>
@@ -20,6 +37,11 @@
 import channelsFixture from '../cypress/fixtures/channels'
 export default {
   name: 'ChannelsList',
+  data () {
+    return {
+      loading: false
+    }
+  },
   computed: {
     channels () {
       // return []
@@ -38,8 +60,10 @@ export default {
       // MODIFICAR L'ESTAT
       this.$store.commit('channels/SET_CHANNELS', [])
     },
-    refresh () {
-      this.$store.dispatch('channels/REFRESH')
+    async refresh () {
+      this.loading = true
+      await this.$store.dispatch('channels/REFRESH')
+      this.loading = false
     },
     async refreshold () {
       try {
