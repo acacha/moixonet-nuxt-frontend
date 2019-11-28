@@ -1,3 +1,17 @@
+# RESUM NUXT/ASYNC DATA/VUEX
+
+- Veure el curs: https://vueschool.io/courses/async-data-with-nuxtjs
+- Javascript porta de serie fetch() per fer peticions Ajax/XHR (no cal instal·lar res)
+  - Se sol i nosaltres utilitzarem però la llibreria axios (cal instal·lar). NOTA: nuxt porta un mòdul que és el que utilitzarem
+- SSR:
+  - No utilitzare, el típic sistema de cridar a peticions axios.get als mètodes mounted/created
+    - NO SEO optimized
+  - Amb SSR cal utilitzar mètodes propis nuxt: asyncData() o fetch()
+    - asyncData() estableix amb el seu valor de retorn data (de fet fa un merge entre data local i data fetched) -> UTILITZAR SENSE VUEX
+    - fetch()-> no fa merge de data -> UTILITZAR AMB VUE PER FER ELS COMMITS de l'estat VUEX
+- Comprovar la diferència utilitzar asyncData vs fetch/axios a mounted: 
+  - Posar informació a les capçaleres HTML HEAD i veure al consultar el codi font original que les dades no hi són!
+        
 # VUEX
 
 - Esquema com funciona: https://vuex.vuejs.org/vuex.png
