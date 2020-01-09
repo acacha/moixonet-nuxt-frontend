@@ -29,15 +29,15 @@ const actions = {
     return new Promise(async (resolve, reject) => {
       try {
         const channels = await api.index()
-        console.log('channels obtained!!!')
-        console.log(channels.data)
+        // console.log('channels obtained!!!')
+        // console.log(channels.data)
         // commit('channels/' + mutationTypes.CHANNELS_INDEX, channels.data)
         // console.log('AFTER MUTATION')
         commit(mutationTypes.CHANNELS_INDEX, channels.data)
-        console.log('AFTER MUTATION 2')
+        // console.log('AFTER MUTATION 2')
         resolve(channels)
       } catch (error) {
-        console.log('ERROR!!!!!!!!!!')
+        // console.log('ERROR!!!!!!!!!!')
         reject(error)
       }
     })

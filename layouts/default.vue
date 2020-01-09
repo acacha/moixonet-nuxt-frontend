@@ -124,6 +124,12 @@ export default {
       { icon: 'mdi-message', text: 'Sobre nosaltres', to: '/about' },
       { icon: 'mdi-message', text: 'Contact', to: '/contact' }
     ]
-  })
+  }),
+  created () {
+    if (process.browser) {
+      // eslint-disable-next-line nuxt/no-globals-in-created
+      window.user = this.$auth.user
+    }
+  }
 }
 </script>
