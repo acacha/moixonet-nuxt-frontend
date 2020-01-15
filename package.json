@@ -18,7 +18,7 @@
     "test:e2e:silent": "cypress",
     "precommit": "npm run lint",
     "open": "sensible-browser http://nuxt.moixonet.acacha.scool.test:3333/",
-    "open-production": "sensible-browser https://TODO"
+    "open-production": "sensible-browser https://moixonet-nuxt-frontend.now.sh"
   },
   "dependencies": {
     "@nuxtjs/auth": "^4.8.4",
