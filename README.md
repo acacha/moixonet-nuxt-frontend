@@ -1,3 +1,7 @@
+# CSS ANIMATIONS AMB VUE
+
+- [ ] Maximitzar/Minimitzar de la card with toolbar -> utilitzar animació
+
 # RESUM NUXT/ASYNC DATA/VUEX
 
 - Veure el curs: https://vueschool.io/courses/async-data-with-nuxtjs
