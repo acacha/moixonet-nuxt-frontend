@@ -36,7 +36,7 @@ export default {
     '~/plugins/snackbar.client.js',
     '~/plugins/vuelidate.js',
     '~/plugins/api.js',
-    '~/plugins/confirmPlugin.js'
+    // '~/plugins/dialog.js'
   ],
   /*
   ** Nuxt.js dev-modules
@@ -66,6 +66,7 @@ export default {
   ** Build configuration
   */
   build: {
+    transpile: ['dialog.js'],
     /*
     ** You can extend webpack config here
     */

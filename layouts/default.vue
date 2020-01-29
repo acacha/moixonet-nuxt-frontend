@@ -67,6 +67,7 @@
     />
 
     <v-content>
+      <app-snackbar v-model="snackbar" :message="message" :color="color" />
       <nuxt />
     </v-content>
 
@@ -108,8 +109,15 @@
 </template>
 
 <script>
+import AppSnackbar from '../components/AppSnackbar'
+import { HasSnackbar } from '../mixins/HasSnackbar'
+
 export default {
   name: 'Default',
+  components: {
+    'app-snackbar': AppSnackbar
+  },
+  mixins: [ HasSnackbar ],
   data: () => ({
     drawer: false,
     drawerRight: false,
