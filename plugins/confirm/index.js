@@ -6,12 +6,12 @@ function Install (Vue, options = {}) {
   const vuetify = options.vuetify
   delete options.vuetify
   if (!vuetify) {
-    console.warn('Module vuetify-confirm needs vuetify instance. Use Vue.use(VuetifyConfirm, { vuetify })')
+    console.warn('Module vuetify-confirm needs vuetify instance. Use Vue.use(VuetifyConfirm, { vuetify })') // eslint-disable-line
   }
   const Ctor = Vue.extend(Object.assign({ vuetify }, Confirm))
   function createDialogCmp (options) {
     const container = document.querySelector('[data-app=true]') || document.body
-    return new Promise(resolve => {
+    return new Promise((resolve) => {
       const cmp = new Ctor(Object.assign({}, {
         propsData: Object.assign({}, Vue.prototype.$confirm.options, options),
         destroyed: () => {
@@ -22,7 +22,7 @@ function Install (Vue, options = {}) {
       container.appendChild(cmp.$mount().$el)
     })
   }
-  
+
   function show (message, options = {}) {
     options.message = message
     return createDialogCmp(options)

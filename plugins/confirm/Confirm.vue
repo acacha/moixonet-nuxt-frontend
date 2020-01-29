@@ -1,26 +1,35 @@
 <template>
-  <v-dialog eager @input="change" value="true" :max-width="width" :persistent="persistent" @keydown.esc="choose(false)">
+  <v-dialog
+    @input="change"
+    :max-width="width"
+    :persistent="persistent"
+    @keydown.esc="choose(false)"
+    eager
+    value="true"
+  >
     <v-card tile>
-      <v-toolbar v-if="Boolean(title)" dark :color="color" dense flat>
-        <v-icon v-if="Boolean(icon)" left>{{ icon }}</v-icon>
-        <v-toolbar-title class="white--text" v-text="title"/>
+      <v-toolbar v-if="Boolean(title)" :color="color" dark dense flat>
+        <v-icon v-if="Boolean(icon)" left>
+          {{ icon }}
+        </v-icon>
+        <v-toolbar-title v-text="title" class="white--text" />
       </v-toolbar>
-      <v-card-text class="body-1 py-3" v-html="message"/>
+      <v-card-text v-html="message" class="body-1 py-3" />
       <v-card-actions>
-        <v-spacer/>
+        <v-spacer />
         <v-btn
           v-if="Boolean(buttonFalseText)"
           :color="buttonFalseColor"
-          text
           @click="choose(false)"
+          text
         >
           {{ buttonFalseText }}
         </v-btn>
         <v-btn
           v-if="Boolean(buttonTrueText)"
           :color="buttonTrueColor"
-          text
           @click="choose(true)"
+          text
         >
           {{ buttonTrueText }}
         </v-btn>
@@ -77,7 +86,8 @@ export default {
     },
     persistent: Boolean,
     title: {
-      type: String
+      type: String,
+      default: 'PUT YOUR TITLE HERE'
     },
     width: {
       type: Number,

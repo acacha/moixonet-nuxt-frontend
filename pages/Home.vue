@@ -26,7 +26,7 @@
     <v-snackbar v-model="snackbar" :left="$vuetify.breakpoint.lgAndUp">
       You have selected {{ selectedEmployee.name }},
       {{ selectedEmployee.title }}
-      <v-btn color="pink" text @click="snackbar = false">
+      <v-btn @click="snackbar = false" color="pink" text>
         Close
       </v-btn>
     </v-snackbar>
