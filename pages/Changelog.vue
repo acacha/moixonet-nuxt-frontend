@@ -58,6 +58,8 @@
 </template>
 
 <script>
+/* eslint-disable no-console */
+
 import * as actionTypes from '../action-types'
 export default {
   name: 'Changelog',

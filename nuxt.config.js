@@ -36,6 +36,7 @@ export default {
     '~/plugins/snackbar.client.js',
     '~/plugins/vuelidate.js',
     '~/plugins/api.js',
+    '~/plugins/interceptors.js'
     // '~/plugins/dialog.js'
   ],
   /*

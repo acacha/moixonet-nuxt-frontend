@@ -5,3 +5,6 @@ export const CHANNEL_DESTROY = 'CHANNEL_DESTROY'
 
 // CHANNELS
 export const CHANGELOG_INDEX = 'CHANGELOG_INDEX'
+
+// GLOBAL SET MUTATION
+export const SET = 'SET'
