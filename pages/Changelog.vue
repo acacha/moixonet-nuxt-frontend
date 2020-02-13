@@ -3,6 +3,17 @@
     <v-card>
       <v-toolbar dense color="primary" class="white--text">
         <v-toolbar-title>Registre de canvis</v-toolbar-title>
+        <v-spacer />
+        <v-toolbar-items>
+          <v-tooltip bottom>
+            <template v-slot:activator="{ on }">
+              <v-btn v-on="on" @click="refresh" icon dark>
+                <v-icon>mdi-refresh</v-icon>
+              </v-btn>
+            </template>
+            <span>Actualitzar el registre de canvis</span>
+          </v-tooltip>
+        </v-toolbar-items>
       </v-toolbar>
       <v-timeline dense clipped>
         <v-data-iterator
@@ -47,6 +58,7 @@
 </template>
 
 <script>
+import * as actionTypes from '../action-types'
 export default {
   name: 'Changelog',
   data () {
@@ -58,6 +70,24 @@ export default {
     items () {
       return this.$store.getters['changelog/list']
     }
+  },
+  methods: {
+    async refresh () {
+      // this.loading = true
+      try {
+        // const response = await this.$store.dispatch('changelog/index')
+        // this.items = response.data
+        await this.$store.dispatch('changelog/' + actionTypes.CHANGELOG_INDEX)
+        this.$snackbar.showMessage('Registre de canvis actualitzat correctament')
+      } catch (error) {
+        console.log(error)
+        // this.$snackbar.showError('Something happen')
+      }
+      // this.loading = false
+    }
+    // refreshOld () {
+    //   // this.$store.dispatch('changelog/index').then().catch()
+    // }
   }
 }
 </script>
