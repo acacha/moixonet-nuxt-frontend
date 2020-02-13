@@ -130,7 +130,8 @@ export default {
       { icon: 'mdi-access-point', text: 'Canals', to: '/channels' },
       { icon: 'mdi-message', text: 'Missatges', to: '/messages' },
       { icon: 'mdi-message', text: 'Sobre nosaltres', to: '/about' },
-      { icon: 'mdi-message', text: 'Contact', to: '/contact' }
+      { icon: 'mdi-message', text: 'Contact', to: '/contact' },
+      { icon: 'mdi-message', text: 'ChangeLog', to: '/changelog' }
     ]
   }),
   created () {
