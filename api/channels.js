@@ -1,24 +1,16 @@
-import instance from './apiClient'
+import http from './apiClient'
 
 export default {
   index () {
-    return instance
-      .get('/api/v1/channels/')
-      .then(result => result)
+    return http.get('/api/v1/channels/')
   },
   store (channel) {
-    return instance
-      .post('/api/v1/channels/', channel)
-      .then(result => result)
+    return http.post('/api/v1/channels/', channel)
   },
   destroy (channel) {
-    return instance
-      .delete('/api/v1/channels/' + channel.id)
-      .then(result => result)
+    return http.delete('/api/v1/channels/' + channel.id)
   },
   update (channel) {
-    return instance
-      .put('/api/v1/channels/' + channel.id, channel)
-      .then(result => result)
+    return http.put('/api/v1/channels/' + channel.id, channel)
   }
 }
