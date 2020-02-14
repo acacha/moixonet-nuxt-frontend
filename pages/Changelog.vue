@@ -15,14 +15,16 @@
           </v-tooltip>
         </v-toolbar-items>
       </v-toolbar>
-      <v-text-field
-        v-model="search"
-        append-icon="search"
-        label="Buscar"
-        single-line
-        hide-details
-        class="mb-2"
-      />
+      <v-container>
+        <v-text-field
+          v-model="search"
+          append-icon="mdi-search"
+          label="Buscar"
+          single-line
+          hide-details
+          class="mb-2"
+        />
+      </v-container>
       <v-timeline dense clipped>
         <v-data-iterator
           :search="search"
