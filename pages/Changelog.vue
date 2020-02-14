@@ -30,23 +30,17 @@
           >
             <v-container>
               <v-row>
+                <v-col xs5>
+                  {{ log.text }}
+                </v-col>
                 <v-col xs2>
-                  {{ log.user_name }}
+                  <a :href="'/users/' + log.user_id">{{ log.user_name }}</a>
                 </v-col>
                 <v-col xs2>
                   {{ log.date_for_humans }}
                 </v-col>
-                <v-col xs2>
-                  {{ log.description }}
-                </v-col>
-                <v-col xs2>
-                  4
-                </v-col>
-                <v-col xs2>
-                  5
-                </v-col>
-                <v-col xs2>
-                  6
+                <v-col xs3>
+                  TODO
                 </v-col>
               </v-row>
             </v-container>
