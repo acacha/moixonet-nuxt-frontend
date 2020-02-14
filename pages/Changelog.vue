@@ -15,10 +15,20 @@
           </v-tooltip>
         </v-toolbar-items>
       </v-toolbar>
+      <v-text-field
+        v-model="search"
+        append-icon="search"
+        label="Buscar"
+        single-line
+        hide-details
+        class="mb-2"
+      />
       <v-timeline dense clipped>
         <v-data-iterator
           :search="search"
           :items="items"
+          row
+          wrap
         >
           <v-timeline-item
             slot="item"
@@ -66,6 +76,10 @@ export default {
     items () {
       return this.$store.getters['changelog/list']
     }
+  },
+  // https://nuxtjs.org/api/pages-fetch
+  async fetch ({ store }) {
+    await store.dispatch('changelog/' + actionTypes.CHANGELOG_INDEX)
   },
   methods: {
     async refresh () {
