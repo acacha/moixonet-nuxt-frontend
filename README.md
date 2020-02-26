@@ -1,3 +1,48 @@
+# LANDING PAGE
+
+- [ ] Us de HTML 5 semantic -> sections dins de <v-content> 
+- [ ] v-parallax
+- [ ] CTA -> Call To Action
+  -  Centrar          <v-layout column align-center justify-center class="white--text">
+- Secció característiques apilable en mobil
+- Secció formulari de contacte
+- Footer
+- Share button només a mòbils
+- https://codesandbox.io/s/xvlq0l2qnq
+
+# MOBILE
+
+- [ ] De la mateixa forma que fem amb Nativescript provar les capacitats "mobile" 
+  - https://whatwebcando.today/
+  
+## Vibrate
+
+- A la pàgina de caractístiques (vegeu següent apartat) crear un botó que faci vibrar el mòbil
+  
+### Pàgina Informació del dispositiu (com nativescript)
+- Pàgina landscape o portrait: https://whatwebcando.today/screen-orientation.html
+- Altres
+ - Dips i resol·lució de pantalla | Android | IOS 
+ - https://docs.nativescript.org/ns-framework-modules/platform
+- Network type and speed:  
+  - web: https://whatwebcando.today/network-type-speed.html
+  - Nativescript: https://docs.nativescript.org/ns-framework-modules/connectivity
+    - Example: https://play.nativescript.org/?template=play-vue&id=7nn3vh&v=12
+- Online state: https://whatwebcando.today/online-state.html
+- Battery Status: https://whatwebcando.today/battery-status.html
+  - Nativescript: https://github.com/philvbprogrammer/nativescript-powerinfo
+- Device memory: https://whatwebcando.today/memory.html
+  - Nativescript: no cal
+- Geolocation: https://whatwebcando.today/geolocation.html
+  - Nativescript
+- Sistema operatiu:
+  - NativeScript: https://docs.nativescript.org/ns-framework-modules/application  (application.android| application.ios)
+Que cal mostrar:
+- Tipus de connexió: no hi ha | wifi| mobile
+- Status de la xarxa: mostrar canvis a la xarxa
+- Informació de la bateria
+- Geolocalització
+
 # CSS ANIMATIONS AMB VUE
 
 - [ ] Maximitzar/Minimitzar de la card with toolbar -> utilitzar animació
